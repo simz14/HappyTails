@@ -1,7 +1,7 @@
-import React from "react";
 import { Button, Link, Menu, MenuItem } from "@mui/material";
 import React, { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 const PopOverWrapper = styled.div`
@@ -28,10 +28,12 @@ const StyledButton = styled(Button)`
     letter-spacing: none;
     line-height: none;
     margin: 0 10px;
+    transition: 0.5s ease;
   }
 `;
 
 const PopOver = ({ title, items }) => {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -40,6 +42,11 @@ const PopOver = ({ title, items }) => {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleClickMenuItem = (navigateTo) => {
+    handleClose();
+    navigate(navigateTo);
   };
 
   return (
@@ -69,8 +76,7 @@ const PopOver = ({ title, items }) => {
             <MenuItem
               key={item.title}
               component={Link}
-              href={item.href}
-              onClick={handleClose}
+              onClick={() => handleClickMenuItem(item.href)}
             >
               {item.title}
             </MenuItem>

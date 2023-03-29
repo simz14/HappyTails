@@ -1,4 +1,4 @@
-import { theme } from "./Paper";
+import { theme } from "./Components";
 import { ThemeProvider } from "@mui/material/styles";
 
 export default function MuiTheme({ children }) {

@@ -5,7 +5,7 @@ import Button from "../Button";
 import { Container } from "../Container";
 import PopOver from "../PopOver";
 import PurpleButton from "../PuprleButton";
-import MenuDropdown from "../MenuDropdown";
+import MenuDropdown from "./MenuDropdown";
 import { FaPaw } from "react-icons/fa";
 import Logo from "../../assets/HappyTailsLogoOf.png";
 
@@ -60,6 +60,11 @@ const HeaderWrapper = styled.div`
         width: 2.5rem;
         height: 2.5rem;
       }
+    }
+  }
+  @media (max-width: 510px) {
+    & .phoneConsultationsWrap {
+      display: none;
     }
   }
 `;

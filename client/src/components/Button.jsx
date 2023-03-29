@@ -12,7 +12,9 @@ const StyledButton = styled.button`
   cursor: pointer;
   font-family: "Inter", sans-serif;
   margin: 0 10px;
+  transition: 0.5s ease;
   &:hover {
+    transition: 0.5s ease;
     background-color: ${(props) => props.theme.colors.lightPurple};
     color: ${(props) => props.theme.colors.mediumPurple};
   }
