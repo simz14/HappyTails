@@ -8,17 +8,22 @@ const StyledButton = styled.button`
   font-weight: ${(props) => props.theme.typography.weight.xThick};
   font-size: ${(props) => props.theme.typography.size.large};
   padding: ${(props) => props.theme.spacing.padding.large};
-  border-radius: ${(props) => props.theme.radius.xSmall};
+  border-radius: ${(props) =>
+    props.inputButton ? "0 9px 9px 0" : props.theme.radius.xSmall};
   cursor: pointer;
   font-family: "Inter", sans-serif;
   display: flex;
   transition: 0.5s ease;
+
+  & span {
+    margin-left: 1rem;
+  }
+
   & .icon {
     & svg {
       display: flex;
       width: 1rem;
       height: 1rem;
-      margin-right: 1rem;
     }
   }
 
@@ -28,12 +33,12 @@ const StyledButton = styled.button`
   }
 `;
 
-const PurpleButton = ({ title, onClick, icon }) => {
+const PurpleButton = (props) => {
+  console.log(props.className);
   return (
-    <StyledButton onClick={onClick}>
-      {icon && <div className="icon">{icon}</div>}
-
-      {title}
+    <StyledButton inputButton={props.inputButton} onClick={props.onClick}>
+      {props.icon && <div className="icon">{props.icon}</div>}
+      {props.title && <span>{props.title}</span>}
     </StyledButton>
   );
 };

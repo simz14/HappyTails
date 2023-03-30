@@ -1,66 +1,226 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Container } from "../../components/Container";
 import Logo from "../../assets/HappyTailsLogoOf.png";
 import { HiLocationMarker, HiPhone, HiMail } from "react-icons/hi";
+import { RiSendPlaneFill } from "react-icons/ri";
+import { InputAdornment, TextField } from "@mui/material";
+import PurpleButton from "../PuprleButton";
 
 const FooterWrapper = styled.div``;
 
 const ContentWrapper = styled.div`
   display: flex;
+  position: relative;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
-  position: relative;
 
-  & .gridsWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  & .sectionsWrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: 1030px) {
+      justify-content: flex-start;
+    }
+    @media (max-width: 750px) {
+      flex-direction: column;
+    }
+    & img {
+      height: 8rem;
+      width: 8rem;
+    }
+    & h3 {
+      font-family: "Averia Serif Libre", cursive;
+      color: ${(props) => props.theme.colors.darkestPurple};
+      font-size: ${(props) => props.theme.typography.size.xLarge};
+    }
+    & ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    & svg {
+      color: ${(props) => props.theme.colors.darkestPurple};
+    }
+    & a {
+      font-size: ${(props) => props.theme.typography.size.small};
+      line-height: 1.5em;
+      text-decoration: none;
+    }
+    & span {
+      color: ${(props) => props.theme.colors.lightGrey};
+      transition: 0.3s ease;
+      &:hover {
+        transition: 0.3s ease;
+        color: ${(props) => props.theme.colors.mediumPurple};
+      }
+    }
+
+    & .logoLinks {
+      display: flex;
+      flex-direction: column;
+      width: 26%;
+
+      & ul {
+        padding-right: 2rem;
+      }
+      @media (max-width: 1030px) {
+        width: 40%;
+      }
+      & .subscription {
+        width: 26%;
+        & svg {
+          color: white;
+          background-color: ${(props) => props.theme.colors.mediumPurple};
+          border-radius: 0 15px 15px 0;
+        }
+        & .MuiInputBase-root,
+        .MuiButtonBase-root {
+          padding: 0;
+          border-radius: 10px;
+        }
+      }
+      & .section {
+        width: 16%;
+      }
+    }
+    @media (max-width: 1030px) {
+      & .first,
+      .second,
+      .thirt {
+        width: 30%;
+      }
+    }
   }
 `;
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
   return (
     <FooterWrapper>
       <Container>
         <ContentWrapper>
-          <div className="gridsWrapper">
-            <div>
+          <div className="sectionsWrapper">
+            <div className="logoLinks">
               <img src={Logo} alt="logo" />
-              <a href="#">
-                <HiLocationMarker />
-                <span>8880 Santa Monica Blvd Suite Hollywood, CA</span>
-              </a>
-              <a href="#">
-                <HiPhone />
-                <span>+123 456 789</span>
-              </a>
-              <a href="#">
-                <HiMail />
-                <span>help@support.com</span>
-              </a>
+              <ul>
+                <li>
+                  <a href="#">
+                    <HiLocationMarker />
+                    <span>8880 Santa Monica Blvd Suite Hollywood, CA</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <HiPhone />
+                    <span>+123 456 789</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <HiMail />
+                    <span>help@support.com</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-            <a href="#">
+            <div className="section first">
               <h3>Navigation</h3>
-              <span>How it works</span>
-              <span>Donation</span>
-              <span>Dog list</span>
-              <span>Volunteer</span>
-            </a>
-            <a href="#">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span>How it works</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Donation</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Dog list</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Volunteer</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="section second">
               <h3>Our Organization</h3>
-              <span>About Us</span>
-              <span>Our Team</span>
-              <span>FAQ's</span>
-              <span>Contact</span>
-            </a>
-            <a href="#">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span>About Us</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Our Team</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>FAQ's</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="section thirt">
               <h3>Information</h3>
-              <span>Sitemap</span>
-              <span>Privacy policy</span>
-              <span>Terms of services</span>
-              <span>Cookies</span>
-            </a>
-            <div>
+              <ul>
+                <li>
+                  <a href="#">
+                    <span>Sitemap</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Privacy policy</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Terms of services</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Cookies</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="subscription">
               <h3>Subscribe to our newsletter</h3>
+              <TextField
+                className="textField"
+                hiddenLabel
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                value={email}
+                variant="outlined"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <PurpleButton
+                        inputButton={true}
+                        icon={<RiSendPlaneFill />}
+                      />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <div></div>
             </div>
           </div>
         </ContentWrapper>
