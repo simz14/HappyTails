@@ -34,7 +34,7 @@ const HeaderWrapper = styled.div`
     & .freeConsultations {
       & p {
         color: ${(props) => props.theme.colors.darkestPurple};
-        font-size: ${(props) => props.theme.typography.size.small};
+        font-size: ${(props) => props.theme.typography.size.xSmall};
         font-weight: ${(props) => props.theme.typography.weight.medium};
         margin: 0;
       }
@@ -80,7 +80,7 @@ const Header = () => {
             <img className="logoImg" src={Logo} alt="logo" />
           </a>
           <div className="navLinks">
-            <Button title={"Home"} onClick={() => navigate("/")} />{" "}
+            <Button title={"Home"} onClick={() => navigate("/")} />
             <PopOver
               title={"Dog List"}
               items={[

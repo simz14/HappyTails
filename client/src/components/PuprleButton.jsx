@@ -7,7 +7,10 @@ const StyledButton = styled.button`
   color: white;
   font-weight: ${(props) => props.theme.typography.weight.xThick};
   font-size: ${(props) => props.theme.typography.size.large};
-  padding: ${(props) => props.theme.spacing.padding.large};
+  padding: ${(props) =>
+    props.inputButton
+      ? props.theme.spacing.padding.large
+      : props.theme.spacing.padding.small};
   border-radius: ${(props) =>
     props.inputButton ? "0 9px 9px 0" : props.theme.radius.xSmall};
   cursor: pointer;
@@ -34,7 +37,6 @@ const StyledButton = styled.button`
 `;
 
 const PurpleButton = (props) => {
-  console.log(props.className);
   return (
     <StyledButton inputButton={props.inputButton} onClick={props.onClick}>
       {props.icon && <div className="icon">{props.icon}</div>}

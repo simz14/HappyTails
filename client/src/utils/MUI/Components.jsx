@@ -32,7 +32,7 @@ export let theme = createTheme({
     MuiMenuItem: {
       styleOverrides: {
         root: {
-          fontSize: "16px",
+          fontSize: "13px",
           fontWeight: "400",
           fontFamily: ["Inter, sans-serif"],
           color: "#595266",
@@ -49,7 +49,7 @@ export let theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: {
-          fontSize: "16px",
+          fontSize: "13px",
           fontWeight: "400",
           color: "#322258",
           fontFamily: ["Inter, sans-serif"],

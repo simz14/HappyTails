@@ -18,7 +18,7 @@ const PopOverWrapper = styled.div`
 const StyledButton = styled(Button)`
   &.MuiButtonBase-root {
     color: ${(props) => props.theme.colors.darkestPurple};
-    font-size: ${(props) => props.theme.typography.size.small};
+    font-size: ${(props) => props.theme.typography.size.xSmall};
     font-weight: ${(props) => props.theme.typography.weight.medium};
     padding: ${(props) => props.theme.spacing.padding.small};
     border-radius: ${(props) => props.theme.radius.xSmall};

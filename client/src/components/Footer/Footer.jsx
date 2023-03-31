@@ -4,6 +4,9 @@ import { Container } from "../../components/Container";
 import Logo from "../../assets/HappyTailsLogoOf.png";
 import { HiLocationMarker, HiPhone, HiMail } from "react-icons/hi";
 import { RiSendPlaneFill } from "react-icons/ri";
+import { TfiFacebook, TfiTwitterAlt } from "react-icons/tfi";
+import { BsInstagram } from "react-icons/bs";
+import { FaTiktok } from "react-icons/fa";
 import { InputAdornment, TextField } from "@mui/material";
 import PurpleButton from "../PuprleButton";
 
@@ -34,17 +37,15 @@ const ContentWrapper = styled.div`
     & h3 {
       font-family: "Averia Serif Libre", cursive;
       color: ${(props) => props.theme.colors.darkestPurple};
-      font-size: ${(props) => props.theme.typography.size.xLarge};
+      font-size: ${(props) => props.theme.typography.size.small};
     }
     & ul {
       list-style-type: none;
       padding: 0;
     }
-    & svg {
-      color: ${(props) => props.theme.colors.darkestPurple};
-    }
+
     & a {
-      font-size: ${(props) => props.theme.typography.size.small};
+      font-size: ${(props) => props.theme.typography.size.xSmall};
       line-height: 1.5em;
       text-decoration: none;
     }
@@ -64,27 +65,84 @@ const ContentWrapper = styled.div`
 
       & ul {
         padding-right: 2rem;
+        gap: 1rem;
+        display: grid;
       }
+      a {
+        display: flex;
+        align-items: center;
+
+        & span,
+        svg {
+          transition: 0.3s ease;
+        }
+        &:hover {
+          & span,
+          svg {
+            transition: 0.3s ease;
+            color: ${(props) => props.theme.colors.mediumPurple};
+          }
+        }
+      }
+      & svg {
+        color: ${(props) => props.theme.colors.darkestPurple};
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
       @media (max-width: 1030px) {
         width: 40%;
       }
-      & .subscription {
-        width: 26%;
-        & svg {
-          color: white;
-          background-color: ${(props) => props.theme.colors.mediumPurple};
-          border-radius: 0 15px 15px 0;
-        }
-        & .MuiInputBase-root,
-        .MuiButtonBase-root {
-          padding: 0;
-          border-radius: 10px;
+    }
+    & .subscription {
+      width: 26%;
+
+      & .MuiInputBase-root,
+      .MuiButtonBase-root {
+        padding: 0;
+        border-radius: 10px;
+        margin-bottom: 16px;
+      }
+      & .iconsWrapper {
+        display: flex;
+        gap: 0.5rem;
+
+        & a {
+          display: flex;
+          background-color: ${(props) => props.theme.colors.darkestPurple};
+          border-radius: 34px;
+          width: 1rem;
+          height: 1rem;
+          align-items: center;
+          padding: 0.5rem;
+          justify-content: center;
+          transition: 0.3s ease;
+          & svg {
+            transition: 0.3s ease;
+            color: white;
+          }
+          &:hover {
+            background-color: ${(props) => props.theme.colors.lightPurple};
+            transition: 0.3s ease;
+            & svg {
+              transition: 0.3s ease;
+              color: ${(props) => props.theme.colors.darkestPurple};
+            }
+          }
         }
       }
-      & .section {
-        width: 16%;
+      @media (max-width: 750px) {
+        width: 100%;
+        & .MuiFormControl-root {
+          width: 100%;
+        }
       }
     }
+
+    & .section {
+      width: 16%;
+    }
+
     @media (max-width: 1030px) {
       & .first,
       .second,
@@ -107,19 +165,27 @@ const Footer = () => {
               <ul>
                 <li>
                   <a href="#">
-                    <HiLocationMarker />
+                    <span>
+                      <HiLocationMarker />
+                    </span>
+
                     <span>8880 Santa Monica Blvd Suite Hollywood, CA</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <HiPhone />
+                    <span>
+                      <HiPhone />
+                    </span>
+
                     <span>+123 456 789</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <HiMail />
+                    <span>
+                      <HiMail />
+                    </span>
                     <span>help@support.com</span>
                   </a>
                 </li>
@@ -220,7 +286,20 @@ const Footer = () => {
                   ),
                 }}
               />
-              <div></div>
+              <div className="iconsWrapper">
+                <a href="">
+                  <TfiFacebook />
+                </a>
+                <a href="">
+                  <TfiTwitterAlt />
+                </a>
+                <a href="">
+                  <BsInstagram />
+                </a>
+                <a href="">
+                  <FaTiktok />
+                </a>
+              </div>
             </div>
           </div>
         </ContentWrapper>
