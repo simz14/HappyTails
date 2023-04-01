@@ -10,9 +10,6 @@ const PopOverWrapper = styled.div`
   & .arrowIcon {
     width: 0.5rem;
   }
-  & .css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
-    background-color: red;
-  }
 `;
 
 const StyledButton = styled(Button)`

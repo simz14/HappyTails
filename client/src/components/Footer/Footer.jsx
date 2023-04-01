@@ -10,7 +10,10 @@ import { FaTiktok } from "react-icons/fa";
 import { InputAdornment, TextField } from "@mui/material";
 import PurpleButton from "../PuprleButton";
 
-const FooterWrapper = styled.div``;
+const FooterWrapper = styled.div`
+  position: relative;
+  background-color: white;
+`;
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -35,7 +38,7 @@ const ContentWrapper = styled.div`
       width: 8rem;
     }
     & h3 {
-      font-family: "Averia Serif Libre", cursive;
+      font-family: ${(props) => props.theme.typography.family.extra};
       color: ${(props) => props.theme.colors.darkestPurple};
       font-size: ${(props) => props.theme.typography.size.small};
     }

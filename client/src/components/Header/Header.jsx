@@ -10,6 +10,9 @@ import { FaPaw } from "react-icons/fa";
 import Logo from "../../assets/HappyTailsLogoOf.png";
 
 const HeaderWrapper = styled.div`
+  position: relative;
+  z-index: 999;
+  background-color: white;
   & nav {
     display: flex;
     min-height: 5rem;

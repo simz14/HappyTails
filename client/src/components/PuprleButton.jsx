@@ -36,11 +36,11 @@ const StyledButton = styled.button`
   }
 `;
 
-const PurpleButton = (props) => {
+const PurpleButton = ({ icon, title, onClick, inputButton }) => {
   return (
-    <StyledButton inputButton={props.inputButton} onClick={props.onClick}>
-      {props.icon && <div className="icon">{props.icon}</div>}
-      {props.title && <span>{props.title}</span>}
+    <StyledButton inputButton={inputButton} onClick={onClick}>
+      {icon && <div className="icon">{icon}</div>}
+      {title && <span>{title}</span>}
     </StyledButton>
   );
 };

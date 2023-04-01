@@ -7,5 +7,8 @@ export const typography = {
     xxLarge: "25px",
   },
   weight: { thin: 300, medium: 400, thick: 500, xThick: 600 },
-  family: { basic: ["Inter", "sans - serif"], extra: ["Allura", "cursive"] },
+  family: {
+    basic: "'Inter', sans-serif",
+    extra: "'Averia Serif Libre', cursive",
+  },
 };
