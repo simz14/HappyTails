@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FaArrowCircleRight } from "react-icons/fa";
 import PurpleButton from "../../../components/PuprleButton";
 import happyWomenImg from "../../../assets/womenHappyDog.png";
+import OptionsSection from "./OptionsSections";
 
 const BcgImage = styled.div`
   height: 100%;
@@ -105,6 +106,7 @@ const IntroSection = () => {
         </div>
         <BcgImage></BcgImage>
       </IntroWrapper>
+      <OptionsSection />
     </HomeWrapper>
   );
 };
