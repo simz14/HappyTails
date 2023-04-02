@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 99;
+  gap: 1rem;
   border: none;
   background-color: ${(props) => props.theme.colors.mediumPurple};
   color: white;
@@ -15,12 +20,7 @@ const StyledButton = styled.button`
     props.inputButton ? "0 9px 9px 0" : props.theme.radius.xSmall};
   cursor: pointer;
   font-family: "Inter", sans-serif;
-  display: flex;
   transition: 0.5s ease;
-
-  & span {
-    margin-left: 1rem;
-  }
 
   & .icon {
     & svg {
@@ -32,15 +32,23 @@ const StyledButton = styled.button`
 
   &:hover {
     transition: 0.5s ease;
-    box-shadow: 0px 0px 0px 10px ${(props) => props.theme.colors.lightPurple};
+    box-shadow: 0px 0px 0px 10px rgba(96, 110, 225, 0.16);
   }
 `;
 
-const PurpleButton = ({ icon, title, onClick, inputButton }) => {
+const PurpleButton = ({
+  icon,
+  title,
+  onClick,
+  inputButton,
+  iconBefore,
+  iconAfter,
+}) => {
   return (
     <StyledButton inputButton={inputButton} onClick={onClick}>
-      {icon && <div className="icon">{icon}</div>}
+      {iconBefore && icon && <div className="icon">{icon}</div>}
       {title && <span>{title}</span>}
+      {iconAfter && icon && <div className="icon">{icon}</div>}
     </StyledButton>
   );
 };

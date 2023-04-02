@@ -10,6 +10,13 @@ export let theme = createTheme({
         },
       },
     },
+    MuiPopper: {
+      styleOverrides: {
+        root: {
+          zIndex: "9999",
+        },
+      },
+    },
     MuiListItemButton: {
       styleOverrides: {
         root: {
@@ -22,13 +29,7 @@ export let theme = createTheme({
         },
       },
     },
-    MuiPopover: {
-      styleOverrides: {
-        root: {
-          zIndex: "0",
-        },
-      },
-    },
+
     MuiMenuItem: {
       styleOverrides: {
         root: {
@@ -56,6 +57,7 @@ export let theme = createTheme({
         },
       },
     },
+
     MuiButton: {
       styleOverrides: {
         root: {
@@ -78,6 +80,15 @@ theme = createTheme(theme, {
             width: "100%",
             marginLeft: "0.5rem",
             marginTop: " 1rem",
+          },
+        },
+      },
+    },
+    MuiPopover: {
+      styleOverrides: {
+        root: {
+          [theme.breakpoints.down("1030")]: {
+            zIndex: "0",
           },
         },
       },

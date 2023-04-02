@@ -1,4 +1,13 @@
-import { Button, Link, Menu, MenuItem } from "@mui/material";
+import {
+  Box,
+  Button,
+  ClickAwayListener,
+  Link,
+  Menu,
+  MenuItem,
+  Paper,
+  Popper,
+} from "@mui/material";
 import React, { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { useNavigate } from "react-router";
@@ -59,27 +68,23 @@ const PopOver = ({ title, items }) => {
         {title}
       </StyledButton>
 
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-      >
-        {items.map((item) => {
-          return (
-            <MenuItem
-              key={item.title}
-              component={Link}
-              onClick={() => handleClickMenuItem(item.href)}
-            >
-              {item.title}
-            </MenuItem>
-          );
-        })}
-      </Menu>
+      <Popper anchorEl={anchorEl} open={open}>
+        <ClickAwayListener onClickAway={handleClose}>
+          <Paper>
+            {items.map((item) => {
+              return (
+                <MenuItem
+                  key={item.title}
+                  component={Link}
+                  onClick={() => handleClickMenuItem(item.href)}
+                >
+                  {item.title}
+                </MenuItem>
+              );
+            })}
+          </Paper>
+        </ClickAwayListener>
+      </Popper>
     </PopOverWrapper>
   );
 };

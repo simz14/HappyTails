@@ -10,9 +10,11 @@ import { FaPaw } from "react-icons/fa";
 import Logo from "../../assets/HappyTailsLogoOf.png";
 
 const HeaderWrapper = styled.div`
-  position: relative;
-  z-index: 999;
+  position: sticky;
+  top: 0;
   background-color: white;
+  z-index: 999;
+
   & nav {
     display: flex;
     min-height: 5rem;
@@ -111,6 +113,7 @@ const Header = () => {
             </div>
             <PurpleButton
               icon={<FaPaw />}
+              iconBefore={true}
               title={"Adopt Here"}
               onClick={() => navigate("/adoption")}
             />

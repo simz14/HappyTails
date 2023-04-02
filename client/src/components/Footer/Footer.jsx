@@ -283,6 +283,7 @@ const Footer = () => {
                     <InputAdornment position="end">
                       <PurpleButton
                         inputButton={true}
+                        iconBefore={true}
                         icon={<RiSendPlaneFill />}
                       />
                     </InputAdornment>
