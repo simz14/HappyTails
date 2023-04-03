@@ -59,7 +59,7 @@ const IntroWrapper = styled.div`
         text-align: center;
       }
       & h1 {
-        font-size: ${(props) => props.theme.typography.size.mHeader};
+        font-size: ${(props) => props.theme.typography.size.lHeader};
       }
       & .qoute {
         font-size: ${(props) => props.theme.typography.size.large};

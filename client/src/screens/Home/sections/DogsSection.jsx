@@ -16,7 +16,7 @@ const DogsContainer = styled.div`
   & h2 {
     color: ${(props) => props.theme.colors.darkestPurple};
     font-family: ${(props) => props.theme.typography.family.extra};
-    font-size: ${(props) => props.theme.typography.size.mHeader};
+    font-size: ${(props) => props.theme.typography.size.lHeader};
   }
   & p {
     color: ${(props) => props.theme.colors.lightGrey};
