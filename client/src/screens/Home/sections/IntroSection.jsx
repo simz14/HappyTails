@@ -59,7 +59,7 @@ const IntroWrapper = styled.div`
         text-align: center;
       }
       & h1 {
-        font-size: 48px;
+        font-size: ${(props) => props.theme.typography.size.mHeader};
       }
       & .qoute {
         font-size: ${(props) => props.theme.typography.size.large};
@@ -106,7 +106,6 @@ const IntroSection = () => {
         </div>
         <BcgImage></BcgImage>
       </IntroWrapper>
-      <OptionsSection />
     </HomeWrapper>
   );
 };
