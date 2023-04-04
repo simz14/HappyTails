@@ -3,7 +3,7 @@ import IntroSection from "./sections/IntroSection";
 import Layout from "../../components/Layout";
 import OptionsSection from "./sections/OptionsSections";
 import DogsSection from "./sections/DogsSection";
-import ServicesSection from "./sections/ServicesSection";
+import ServicesSection from "./sections/ServiceSection/ServicesSection";
 
 const Home = () => {
   return (

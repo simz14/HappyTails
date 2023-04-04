@@ -30,14 +30,6 @@ const Option = styled.div`
   & img {
     width: 25%;
   }
-  & h3 {
-    font-size: ${(props) => props.theme.typography.size.xxLarge};
-    font-family: ${(props) => props.theme.typography.family.extra};
-    color: ${(props) => props.theme.colors.darkestPurple};
-    &:hover {
-      color: ${(props) => props.theme.colors.mediumPurple};
-    }
-  }
   & span {
     color: ${(props) => props.theme.colors.lightGrey};
   }

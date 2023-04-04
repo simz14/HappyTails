@@ -34,11 +34,6 @@ const IntroWrapper = styled.div`
   & .introText {
     max-width: 2000px;
     padding: 0 15%;
-    & h1 {
-      font-family: ${(props) => props.theme.typography.family.extra};
-      font-size: 67px;
-      color: ${(props) => props.theme.colors.darkestPurple};
-    }
     & .qoute {
       font-family: ${(props) => props.theme.typography.family.basic};
       font-size: ${(props) => props.theme.typography.size.xLarge};
@@ -58,9 +53,6 @@ const IntroWrapper = styled.div`
         justify-items: center;
         text-align: center;
       }
-      & h1 {
-        font-size: ${(props) => props.theme.typography.size.lHeader};
-      }
       & .qoute {
         font-size: ${(props) => props.theme.typography.size.large};
       }
@@ -74,9 +66,6 @@ const IntroWrapper = styled.div`
         display: grid;
         text-align: center;
         justify-items: normal;
-      }
-      & h1 {
-        font-size: 40px;
       }
       & button {
         justify-content: center;

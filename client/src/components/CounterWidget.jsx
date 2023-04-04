@@ -12,6 +12,7 @@ const CounterWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   & .count {
@@ -19,11 +20,8 @@ const CounterWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    & h1 {
+    & h2 {
       margin: 0;
-      color: ${(props) => props.theme.colors.darkestPurple};
-      font-family: ${(props) => props.theme.typography.family.extra};
-      font-size: ${(props) => props.theme.typography.size.lHeader};
     }
     & span {
       color: ${(props) => props.theme.colors.lightGrey};
@@ -36,15 +34,15 @@ const CounterWidget = () => {
   return (
     <CounterWrapper>
       <div className="count">
-        <h1>10k+</h1>
+        <h2>10k+</h2>
         <span>Dogs Adopted</span>
       </div>
       <div className="count">
-        <h1>5k+</h1>
+        <h2>5k+</h2>
         <span>Shelters & Rescues</span>
       </div>
       <div className="count">
-        <h1>18+</h1>
+        <h2>18+</h2>
         <span>Years of Impact</span>
       </div>
     </CounterWrapper>

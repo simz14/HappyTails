@@ -13,23 +13,6 @@ const DogsContainer = styled.div`
   & .sectionDescription {
     text-align: center;
   }
-  & h2 {
-    color: ${(props) => props.theme.colors.darkestPurple};
-    font-family: ${(props) => props.theme.typography.family.extra};
-    font-size: ${(props) => props.theme.typography.size.lHeader};
-  }
-  & p {
-    color: ${(props) => props.theme.colors.lightGrey};
-    font-size: ${(props) => props.theme.typography.size.large};
-  }
-  @media (max-width: 750px) {
-    & h2 {
-      font-size: ${(props) => props.theme.typography.size.sHeader};
-    }
-    & p {
-      font-size: ${(props) => props.theme.typography.size.small};
-    }
-  }
 `;
 
 const DogsWrapper = styled.div`

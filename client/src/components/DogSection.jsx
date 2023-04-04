@@ -11,17 +11,6 @@ const Dog = styled.div`
     box-shadow: 0px 10px 30px 0px rgba(204, 142, 9.9, 0.12);
   }
 
-  & h3 {
-    color: ${(props) => props.theme.colors.darkestPurple};
-    font-family: ${(props) => props.theme.typography.family.extra};
-    font-size: ${(props) => props.theme.typography.size.xxLarge};
-    &:hover {
-      color: ${(props) => props.theme.colors.mediumPurple};
-    }
-  }
-  & p {
-    font-size: ${(props) => props.theme.typography.size.small};
-  }
   & img {
     height: auto;
     max-width: 100%;

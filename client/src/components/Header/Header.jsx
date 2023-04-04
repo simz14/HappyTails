@@ -38,8 +38,6 @@ const HeaderWrapper = styled.div`
     gap: 1rem;
     & .freeConsultations {
       & p {
-        color: ${(props) => props.theme.colors.darkestPurple};
-        font-size: ${(props) => props.theme.typography.size.xSmall};
         font-weight: ${(props) => props.theme.typography.weight.medium};
         margin: 0;
       }
