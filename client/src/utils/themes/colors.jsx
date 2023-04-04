@@ -1,6 +1,5 @@
 export const colors = {
   lightPurple: "#eeeffc",
-  lightBcgBlue: "  #F5F9FA",
   mediumPurple: "#616fe2",
   darkestPurple: "#322258",
   lightGrey: "#595266",
@@ -8,4 +7,7 @@ export const colors = {
   lightYellow: "#fdfaf4",
   yellow: " #ffeabd",
   lightPink: "#fffdf5",
+  lightBcgBlue: "  #F5F9FA",
+  lightBcgPink: "#fffcf8",
+  brightYellow: "#ffb20c",
 };

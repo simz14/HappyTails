@@ -3,6 +3,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import PurpleButton from "../../../components/PuprleButton";
 import happyWomenImg from "../../../assets/womenHappyDog.png";
 import OptionsSection from "./OptionsSections";
+import { Spacer } from "../../../components/Spacer";
 
 const BcgImage = styled.div`
   height: 100%;
@@ -14,11 +15,11 @@ const BcgImage = styled.div`
   background-position: 52vw -170px;
   background-repeat: no-repeat;
   @media (max-width: 1030px) {
-    background-position: 50% 66%;
+    background-position: 50% 50%;
     background-size: 509px auto;
   }
   @media (max-width: 750px) {
-    background-position: 0% 63%;
+    background-position: 0% 25%;
     background-size: contain;
   }
 `;
@@ -79,6 +80,7 @@ const IntroSection = () => {
     <HomeWrapper>
       <IntroWrapper>
         <div className="introText">
+          <Spacer size="s" />
           <div className="content">
             <h1>Adoption is a loving option</h1>
             <p className="qoute">
@@ -95,6 +97,7 @@ const IntroSection = () => {
         </div>
         <BcgImage></BcgImage>
       </IntroWrapper>
+      <OptionsSection />
     </HomeWrapper>
   );
 };

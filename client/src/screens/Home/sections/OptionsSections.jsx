@@ -7,16 +7,19 @@ import donation from "../../../assets/donation.png";
 import { useNavigate } from "react-router";
 
 const OptionsWrapper = styled.div`
-  width: 100%;
+  position: relative;
   border-radius: ${(props) => props.theme.radius.small};
   border: 1px solid ${(props) => props.theme.colors.lightYellow};
-  box-shadow: 0px 10px 30px 0px rgba(204, 142, 9.9, 0.12);
+  box-shadow: rgba(204, 142, 10, 0.12) 0px 10px 30px 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  background-color: white;
+  bottom: 8rem;
 
   @media (max-width: 750px) {
     display: flex;
     flex-direction: column;
+    bottom: 13rem;
   }
 `;
 

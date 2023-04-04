@@ -88,7 +88,7 @@ theme = createTheme(theme, {
       styleOverrides: {
         root: {
           [theme.breakpoints.down("1030")]: {
-            zIndex: "0",
+            zIndex: "99",
           },
         },
       },

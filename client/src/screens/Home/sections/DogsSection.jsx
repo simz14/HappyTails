@@ -5,6 +5,7 @@ import DogSection from "../../../components/DogSection";
 import { DogsContext } from "../../../context/DogsContext";
 import PurpleButton from "../../../components/PuprleButton";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { Spacer } from "../../../components/Spacer";
 
 const DogsContainer = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ const DogsWrapper = styled.div`
 
 const DogsSection = () => {
   const { dogs } = useContext(DogsContext);
-  console.log(dogs);
+
   return (
     <Container>
       <DogsContainer>
@@ -40,13 +41,14 @@ const DogsSection = () => {
           {dogs.slice(0, 6).map((dog) => {
             return <DogSection key={dog.id} dog={dog} />;
           })}
-        </DogsWrapper>{" "}
+        </DogsWrapper>
         <PurpleButton
           icon={<FaArrowCircleRight />}
           iconAfter={true}
           title={"View more"}
         />
       </DogsContainer>
+      <Spacer size="s" />
     </Container>
   );
 };

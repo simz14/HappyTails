@@ -1,17 +1,17 @@
 import React from "react";
 import IntroSection from "./sections/IntroSection";
 import Layout from "../../components/Layout";
-import OptionsSection from "./sections/OptionsSections";
 import DogsSection from "./sections/DogsSection";
 import ServicesSection from "./sections/ServiceSection/ServicesSection";
+import ClientsSection from "./sections/ClientsSection";
 
 const Home = () => {
   return (
     <Layout>
       <IntroSection />
-      <OptionsSection />
       <DogsSection />
       <ServicesSection />
+      <ClientsSection />
     </Layout>
   );
 };

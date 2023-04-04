@@ -10,6 +10,11 @@ const Dog = styled.div`
     border: 1px solid ${(props) => props.theme.colors.yellow};
     box-shadow: 0px 10px 30px 0px rgba(204, 142, 9.9, 0.12);
   }
+  & h3 {
+    &:hover {
+      color: ${(props) => props.theme.colors.mediumPurple};
+    }
+  }
 
   & img {
     height: auto;

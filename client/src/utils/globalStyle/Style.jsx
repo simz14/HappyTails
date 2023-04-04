@@ -10,21 +10,22 @@ const GlobalStyle = createGlobalStyle`
   & h1 {
     font-family: ${typography.family.extra};
     font-size: 67px;
-    color: ${colors.darkestPurple};
+    color: ${colors.darkestPurple}; 
+    margin:0;
 
     }
    & h2 {
     color: ${colors.darkestPurple};
     font-family: ${typography.family.extra};
-    font-size: ${typography.size.mHeader}; margin:0
+    font-size: ${typography.size.mHeader}; 
+    margin:0
   }
   & h3 {
     color: ${colors.darkestPurple};
     font-family: ${typography.family.extra};
-    font-size: ${typography.size.xxLarge};
-    &:hover {
-      color: ${colors.mediumPurple};
-    }
+    font-size: ${typography.size.xLarge}; 
+    margin:0;
+
   }
 
   @media (max-width: 1030px) {
@@ -38,8 +39,15 @@ const GlobalStyle = createGlobalStyle`
         font-size: 40px;
       }
     & h2 {
-      font-size: ${typography.size.sHeader};
-    }
+      font-size: ${typography.size.xxLarge};
+    }  
+    & h3 {
+    color: ${colors.darkestPurple};
+    font-family: ${typography.family.extra};
+    font-size: ${typography.size.large}; 
+    margin:0;
+
+  }
 
   }
 `;

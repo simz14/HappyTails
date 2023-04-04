@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "../../../../../components/Container";
 import shapeMask from "../../../../../assets/shape.png";
+import { Spacer } from "../../../../../components/Spacer";
 
 const HowItWorksWrap = styled.div`
   display: flex;
@@ -48,6 +49,7 @@ const HowItWorksSection = () => {
   return (
     <Container>
       <HowItWorksWrap>
+        <Spacer size="s" />
         <h2>How it works?</h2>
         <p>Look at how the adoption process looks like.</p>
         <div className="stepsWrap">
@@ -84,6 +86,7 @@ const HowItWorksSection = () => {
             <p>Finally, adopt your new friend.</p>
           </div>
         </div>
+        <Spacer size="s" />
       </HowItWorksWrap>
     </Container>
   );

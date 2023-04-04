@@ -5,6 +5,7 @@ import groupIcon from "../../../../../assets/group-icon.png";
 import qualityIcon from "../../../../../assets/quality-icon.png";
 import CounterWidget from "../../../../../components/CounterWidget";
 import happyDogsVideo from "../../../../../assets/happyDogsVideo.mp4";
+import { Spacer } from "../../../../../components/Spacer";
 
 const ServicesSectionContainer = styled.div`
   display: flex;
@@ -34,6 +35,7 @@ const ReasonsWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 5%;
+    padding: 1rem 0;
     & img {
       height: 100%;
       width: 10%;
@@ -66,9 +68,10 @@ const VideoWrapper = styled.div`
 const ServicesComp = () => {
   return (
     <>
+      {" "}
+      <Spacer size="s" />
       <ServicesSectionContainer>
         <img className="threeDogs" src={threeDogs} alt="dogs" />
-
         <ReasonsWrapper>
           <h2>Best service to breeds your loved dogs</h2>
           <div className="reason first">
@@ -84,7 +87,8 @@ const ServicesComp = () => {
               <h3>Highest Quality</h3>
               <p>We provide the highest quality service.</p>
             </div>
-          </div>
+          </div>{" "}
+          <Spacer size="s" />
         </ReasonsWrapper>
       </ServicesSectionContainer>
       <CounterWidget />
