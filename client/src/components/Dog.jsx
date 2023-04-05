@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 const Dog = styled.div`
@@ -43,8 +44,9 @@ const Dog = styled.div`
 `;
 
 const DogSection = ({ dog }) => {
+  const navigate = useNavigate();
   return (
-    <Dog>
+    <Dog onClick={() => navigate(`/dog/${dog.id}`)}>
       <img src={dog.img} alt="dog" />
       <h3>{dog.name}</h3>
       <p>{dog.breed}</p>

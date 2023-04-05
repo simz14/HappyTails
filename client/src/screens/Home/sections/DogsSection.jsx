@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Container } from "../../../components/Container";
 import styled from "styled-components";
-import DogSection from "../../../components/DogSection";
+import Dog from "../../../components/Dog";
 import { DogsContext } from "../../../context/DogsContext";
 import PurpleButton from "../../../components/PuprleButton";
 import { FaArrowCircleRight } from "react-icons/fa";
@@ -39,7 +39,7 @@ const DogsSection = () => {
         </div>
         <DogsWrapper>
           {dogs.slice(0, 6).map((dog) => {
-            return <DogSection key={dog.id} dog={dog} />;
+            return <Dog key={dog.id} dog={dog} />;
           })}
         </DogsWrapper>
         <PurpleButton

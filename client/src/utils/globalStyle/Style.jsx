@@ -23,9 +23,14 @@ const GlobalStyle = createGlobalStyle`
   & h3 {
     color: ${colors.darkestPurple};
     font-family: ${typography.family.extra};
-    font-size: ${typography.size.xLarge}; 
+    font-size: ${typography.size.sHeader}; 
     margin:0;
-
+  }
+  & h4 {
+    color: ${colors.darkestPurple};
+    font-family: ${typography.family.extra};
+    font-size: ${typography.size.large}; 
+    margin:0;
   }
 
   @media (max-width: 1030px) {
@@ -47,7 +52,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${typography.size.large}; 
     margin:0;
 
-  }
+  }  & h4 {
+      font-size: ${typography.size.small};
+    }  
 
   }
 `;
