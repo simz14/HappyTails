@@ -8,6 +8,8 @@ import { Container } from "../../components/Container";
 import bcgPaws from "../../assets/bcgPaws.png";
 import DogInfo from "./components/DogInfo";
 import KnowBetter from "./components/KnowBetter";
+import AdoptRequest from "./components/AdoptRequest";
+import DogsSection from "../../components/DogsSection";
 
 const IntroWrap = styled.div`
   background-color: rgb(255, 252, 248);
@@ -32,7 +34,7 @@ const DogDetail = () => {
 
   useEffect(() => {
     setDog(dogs.find((dog) => dog.id == id));
-  }, [dogs]);
+  }, [dogs, id]);
 
   return (
     <Layout>
@@ -49,6 +51,9 @@ const DogDetail = () => {
       <Container>
         <KnowBetter dog={dog} />
       </Container>
+      <AdoptRequest />
+      <Spacer size="s" />
+      <DogsSection hasBottomBorder={true} amount={3} />
     </Layout>
   );
 };

@@ -1,8 +1,9 @@
 import React from "react";
-
 import styled from "styled-components";
 import PurpleButton from "../../../components/PuprleButton";
-import { FaFileAlt } from "react-icons/fa";
+import ArticleIcon from "@mui/icons-material/Article";
+import SwiperComp from "../../../components/Swiper";
+import { Container } from "../../../components/Container";
 
 const InfoWrap = styled.div`
   display: grid;
@@ -46,7 +47,9 @@ const Info = styled.div`
 const DogInfo = ({ dog }) => {
   return (
     <InfoWrap>
-      <div></div>
+      <div>
+        <SwiperComp />
+      </div>
       <Info>
         <h3>Facts about me</h3>
         <div className="facts">
@@ -80,7 +83,7 @@ const DogInfo = ({ dog }) => {
           </div>
         </div>
         <PurpleButton
-          icon={<FaFileAlt />}
+          icon={<ArticleIcon />}
           iconBefore={true}
           title="Apply to adoption"
         />

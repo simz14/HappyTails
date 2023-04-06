@@ -9,6 +9,7 @@ import { BsInstagram } from "react-icons/bs";
 import { FaTiktok } from "react-icons/fa";
 import { InputAdornment, TextField } from "@mui/material";
 import PurpleButton from "../PuprleButton";
+import { Spacer } from "../Spacer";
 
 const FooterWrapper = styled.div`
   position: relative;
@@ -160,6 +161,7 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
+      <Spacer size="s" />
       <Container>
         <ContentWrapper>
           <div className="sectionsWrapper">
