@@ -5,27 +5,11 @@ import { useParams } from "react-router";
 import { DogsContext } from "../../context/DogsContext";
 import { Spacer } from "../../components/Spacer";
 import { Container } from "../../components/Container";
-import bcgPaws from "../../assets/bcgPaws.png";
 import DogInfo from "./components/DogInfo";
 import KnowBetter from "./components/KnowBetter";
 import AdoptRequest from "./components/AdoptRequest";
-import DogsSection from "../../components/DogsSection";
-
-const IntroWrap = styled.div`
-  background-color: rgb(255, 252, 248);
-  display: flex;
-  text-align: center;
-  position: relative;
-  & .paws {
-    object-fit: cover;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0.07;
-  }
-`;
+import DogsSection from "../../components/Dog/DogsSection";
+import PawsBcg from "../../components/PawsBcg";
 
 const DogDetail = () => {
   const { id } = useParams();
@@ -38,8 +22,7 @@ const DogDetail = () => {
 
   return (
     <Layout>
-      <IntroWrap>
-        <img className="paws" src={bcgPaws} alt="paws" />
+      <PawsBcg>
         <Container>
           <Spacer size="s" />
           <h1>Hi, my name is {dog?.name}!</h1>
@@ -47,7 +30,7 @@ const DogDetail = () => {
           <Spacer size="s" />
           <DogInfo dog={dog} />
         </Container>
-      </IntroWrap>
+      </PawsBcg>
       <Container>
         <KnowBetter dog={dog} />
       </Container>

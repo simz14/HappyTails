@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Swiper, { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const SwiperWrap = styled.div`
   width: 100%;
@@ -14,6 +16,16 @@ const SwiperWrap = styled.div`
     swiperName
       ? `.${swiperName} {height:100%;width:100%;position:relative}`
       : null}
+
+  .swiper-button-next,.swiper-button-prev {
+    color: #edebe7;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: medium;
+    font-weight: 600;
+  }
 
   img {
     height: 100%;

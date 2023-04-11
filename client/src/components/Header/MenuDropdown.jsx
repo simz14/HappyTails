@@ -102,9 +102,13 @@ const MenuDropdown = () => {
           <ListItemText primary="Dog List" />{" "}
           {openDogList ? <BsChevronUp /> : <BsChevronDown />}
         </ListItemButton>
+
         <Collapse in={openDogList} timeout="auto" unmountOnExit>
           <List component="div" disablePadding sx={{ paddingLeft: "1rem" }}>
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton
+              onClick={() => handleClickMenuItem("/doglist")}
+              sx={{ pl: 4 }}
+            >
               <ListItemText primary="Dog List" />
             </ListItemButton>
 

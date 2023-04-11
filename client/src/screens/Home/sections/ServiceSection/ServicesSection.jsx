@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../../../../components/Container";
-import HowItWorksSection from "./components/HowItWorksSection";
+import HowItWorksSection from "../../../../components/HowItWorks";
 import ServicesComp from "./components/ServicesComp";
 
 const ServicesSectionWrapp = styled.div`

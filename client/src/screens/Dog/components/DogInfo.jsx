@@ -18,6 +18,9 @@ const InfoWrap = styled.div`
   text-align: start;
   padding: ${({ theme }) => theme.spacing.padding.large};
   gap: 5rem;
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Info = styled.div`
@@ -25,6 +28,10 @@ const Info = styled.div`
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+
+  @media (max-width: 750px) {
+    align-items: initial;
+  }
   & .facts {
     display: grid;
     grid-template-columns: 1fr 1fr;

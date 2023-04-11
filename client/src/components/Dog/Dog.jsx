@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
 
-const Dog = styled.div`
+const DogWrap = styled.div`
   border-radius: ${(props) => props.theme.radius.large};
   padding: ${(props) => props.theme.spacing.padding.small};
   border: 1px solid white;
@@ -43,10 +43,10 @@ const Dog = styled.div`
   }
 `;
 
-const DogSection = ({ dog }) => {
+const Dog = ({ dog }) => {
   const navigate = useNavigate();
   return (
-    <Dog onClick={() => navigate(`/dog/${dog.id}`)}>
+    <DogWrap onClick={() => navigate(`/dog/${dog.id}`)}>
       <img src={dog.img} alt="dog" />
       <h3>{dog.name}</h3>
       <p>{dog.breed}</p>
@@ -55,8 +55,8 @@ const DogSection = ({ dog }) => {
         <span className="border">{dog.age} Years</span>
         <span>{dog.location}</span>
       </div>
-    </Dog>
+    </DogWrap>
   );
 };
 
-export default DogSection;
+export default Dog;
