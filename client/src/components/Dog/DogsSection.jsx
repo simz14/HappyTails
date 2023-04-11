@@ -48,7 +48,6 @@ const DogsSection = ({
     loadMore && setDogsToShow((prev) => prev + 6);
   };
 
-  console.log(dogsToShow, dogs.length);
   return (
     <Container>
       <DogsContainer className={hasBottomBorder && "border"}>

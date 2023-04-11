@@ -5,6 +5,7 @@ import { Container } from "../../../components/Container";
 import PurpleButton from "../../../components/PuprleButton";
 import ArticleIcon from "@mui/icons-material/Article";
 import { Spacer } from "../../../components/Spacer";
+import { useNavigate } from "react-router";
 
 const RequestContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.lightPurple};
@@ -36,7 +37,8 @@ const RequestWrap = styled.div`
   }
 `;
 
-const AdoptRequest = () => {
+const AdoptRequest = ({ id }) => {
+  const navigate = useNavigate();
   return (
     <RequestContainer>
       <Container>
@@ -53,6 +55,7 @@ const AdoptRequest = () => {
               icon={<ArticleIcon />}
               iconBefore={true}
               title="Apply to adoption"
+              onClick={() => navigate(`/adoption/${id}`)}
             />
           </div>
         </RequestWrap>

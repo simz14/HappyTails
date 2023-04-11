@@ -28,7 +28,6 @@ export const DogsProvider = ({ children }) => {
 
   useEffect(() => {
     setData();
-    console.log(dogs);
   }, []);
 
   return (

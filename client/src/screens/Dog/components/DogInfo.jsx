@@ -3,9 +3,7 @@ import styled from "styled-components";
 import PurpleButton from "../../../components/PuprleButton";
 import ArticleIcon from "@mui/icons-material/Article";
 import SwiperComp from "../../../components/Swiper";
-import dachshund1 from "../../../assets/dachshund1/dachshund1.webp";
-import dachshund2 from "../../../assets/dachshund1/dachshund2.jpg";
-import dachshund3 from "../../../assets/dachshund1/dachshund3.jpg";
+import { useNavigate } from "react-router";
 
 const InfoWrap = styled.div`
   display: grid;
@@ -55,12 +53,10 @@ const Info = styled.div`
 `;
 
 const DogInfo = ({ dog }) => {
+  const navigate = useNavigate();
   return (
     <InfoWrap>
-      <SwiperComp
-        swiperName="swiper1"
-        images={[dachshund1, dachshund2, dachshund3]}
-      />
+      <SwiperComp swiperName="swiper1" images={dog?.imgs} />
       <Info>
         <h3>Facts about me</h3>
         <div className="facts">
@@ -97,6 +93,7 @@ const DogInfo = ({ dog }) => {
           icon={<ArticleIcon />}
           iconBefore={true}
           title="Apply to adoption"
+          onClick={() => navigate(`/adoption/${dog.id}`)}
         />
       </Info>
     </InfoWrap>

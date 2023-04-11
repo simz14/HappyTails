@@ -34,9 +34,9 @@ const DogDetail = () => {
       <Container>
         <KnowBetter dog={dog} />
       </Container>
-      <AdoptRequest />
+      <AdoptRequest id={id} />
       <Spacer size="s" />
-      <DogsSection hasBottomBorder={true} amount={3} />
+      <DogsSection navigateTo={true} hasBottomBorder={true} amount={3} />
     </Layout>
   );
 };

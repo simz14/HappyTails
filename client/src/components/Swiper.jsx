@@ -4,8 +4,6 @@ import styled from "styled-components";
 import Swiper, { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const SwiperWrap = styled.div`
   width: 100%;
@@ -32,6 +30,7 @@ const SwiperWrap = styled.div`
     width: 100%;
     object-fit: cover;
     border-radius: ${({ theme }) => theme.radius.small};
+    max-height: 20rem;
   }
 `;
 
@@ -53,7 +52,7 @@ const SwiperComp = ({ images, swiperName }) => {
     <SwiperWrap swiperName={swiperName}>
       <div className={swiperName}>
         <div className="swiper-wrapper">
-          {images.map((image) => {
+          {images?.map((image) => {
             return (
               <div key={image} className="swiper-slide">
                 <img src={image} alt="" />

@@ -84,13 +84,7 @@ const Header = () => {
           </a>
           <div className="navLinks">
             <Button title={"Home"} onClick={() => navigate("/")} />
-            <PopOver
-              title={"Dog List"}
-              items={[
-                { title: "Dog List", href: "/doglist" },
-                { title: "Dog Profile", href: "/dogprofile" },
-              ]}
-            />
+            <Button title={"Dog list"} onClick={() => navigate("/doglist")} />
             <Button title={"How It Works"} onClick={() => navigate("/")} />
             <Button title={"Volunteer"} onClick={() => navigate("/")} />
             <PopOver
@@ -113,7 +107,7 @@ const Header = () => {
               icon={<FaPaw />}
               iconBefore={true}
               title={"Adopt Here"}
-              onClick={() => navigate("/adoption")}
+              onClick={() => navigate("/doglist")}
             />
           </div>
           <div className="lessThen1030">

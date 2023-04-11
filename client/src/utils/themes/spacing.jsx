@@ -11,7 +11,7 @@ export const spacing = {
     l: "10rem",
   },
   mobile: {
-    xs: "3rem",
+    xs: "2rem",
     s: "4rem",
     m: "5rem",
     l: "7rem",

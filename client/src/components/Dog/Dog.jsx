@@ -47,7 +47,7 @@ const Dog = ({ dog }) => {
   const navigate = useNavigate();
   return (
     <DogWrap onClick={() => navigate(`/dog/${dog.id}`)}>
-      <img src={dog.img} alt="dog" />
+      <img src={dog?.imgs[0]} alt="dog" />
       <h3>{dog.name}</h3>
       <p>{dog.breed}</p>
       <div className="info">

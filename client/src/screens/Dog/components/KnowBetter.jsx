@@ -46,7 +46,7 @@ const KnowBetter = ({ dog }) => {
             <p>{dog?.story}</p>
           </div>
           <div>
-            <img src={dog?.img} alt="dog" />
+            <img src={dog && dog.imgs && dog.imgs[0]} alt="dog" />
           </div>
         </KnowWrap>
         <Spacer size="s" />
