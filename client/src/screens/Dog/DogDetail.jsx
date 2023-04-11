@@ -16,7 +16,7 @@ const IntroWrap = styled.div`
   display: flex;
   text-align: center;
   position: relative;
-  & img {
+  & .paws {
     object-fit: cover;
     position: absolute;
     bottom: 0;
@@ -39,7 +39,7 @@ const DogDetail = () => {
   return (
     <Layout>
       <IntroWrap>
-        <img src={bcgPaws} alt="paws" />
+        <img className="paws" src={bcgPaws} alt="paws" />
         <Container>
           <Spacer size="s" />
           <h1>Hi, my name is {dog?.name}!</h1>

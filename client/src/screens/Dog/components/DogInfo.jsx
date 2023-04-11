@@ -3,7 +3,9 @@ import styled from "styled-components";
 import PurpleButton from "../../../components/PuprleButton";
 import ArticleIcon from "@mui/icons-material/Article";
 import SwiperComp from "../../../components/Swiper";
-import { Container } from "../../../components/Container";
+import dachshund1 from "../../../assets/dachshund1/dachshund1.webp";
+import dachshund2 from "../../../assets/dachshund1/dachshund2.jpg";
+import dachshund3 from "../../../assets/dachshund1/dachshund3.jpg";
 
 const InfoWrap = styled.div`
   display: grid;
@@ -15,6 +17,7 @@ const InfoWrap = styled.div`
   box-shadow: 0px 20px 30px 0px rgba(204, 142, 9, 0.06);
   text-align: start;
   padding: ${({ theme }) => theme.spacing.padding.large};
+  gap: 5rem;
 `;
 
 const Info = styled.div`
@@ -47,9 +50,10 @@ const Info = styled.div`
 const DogInfo = ({ dog }) => {
   return (
     <InfoWrap>
-      <div>
-        <SwiperComp />
-      </div>
+      <SwiperComp
+        swiperName="swiper1"
+        images={[dachshund1, dachshund2, dachshund3]}
+      />
       <Info>
         <h3>Facts about me</h3>
         <div className="facts">

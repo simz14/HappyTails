@@ -1,38 +1,56 @@
 import React from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import Swiper from "swiper";
+import Swiper, { Navigation } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
 
 const SwiperWrap = styled.div`
   width: 100%;
   overflow: hidden;
-  & .swiper-container {
+  height: 100%;
+
+  ${({ swiperName }) =>
+    swiperName
+      ? `.${swiperName} {height:100%;width:100%;position:relative}`
+      : null}
+
+  img {
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+    border-radius: ${({ theme }) => theme.radius.small};
   }
 `;
 
-const SwiperComp = () => {
+const SwiperComp = ({ images, swiperName }) => {
   useEffect(() => {
-    new Swiper(".swiper-container", {
+    const swiper = new Swiper(`.${swiperName}`, {
       loop: true,
-      slidesPerView: "2",
+      slidesPerView: "1",
       centeredSlides: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      modules: [Navigation],
     });
   }, []);
 
   return (
-    <SwiperWrap>
-      <div className="swiper-container">
+    <SwiperWrap swiperName={swiperName}>
+      <div className={swiperName}>
         <div className="swiper-wrapper">
-          <div className="swiper-slide">1</div>
-          <div className="swiper-slide">2</div>
-          <div className="swiper-slide">3</div>
-          <div className="swiper-slide">4</div>
-          <div className="swiper-slide">5</div>{" "}
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
+          {images.map((image) => {
+            return (
+              <div key={image} className="swiper-slide">
+                <img src={image} alt="" />
+              </div>
+            );
+          })}
         </div>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
       </div>
     </SwiperWrap>
   );
