@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "../../../components/Buttons/Button";
 import PetsIcon from "@mui/icons-material/Pets";
 import LightPurpleButton from "../../../components/Buttons/LightPurpleButton";
+import DonationForm from "./DonationForm";
 
 const BoxWrap = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.yellow};
@@ -24,7 +25,7 @@ const BoxWrap = styled.div`
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -20%;
+    top: -25%;
     border: 5px solid white;
     background-color: ${({ color }) => {
       switch (color) {
@@ -53,13 +54,15 @@ const BoxWrap = styled.div`
 `;
 
 const DonateBox = ({ color, amount }) => {
+  const [open, setOpen] = useState(false);
   return (
     <BoxWrap color={color}>
       <div className="pawBox">
         <PetsIcon />
       </div>
       <h2>{amount}$</h2>
-      <LightPurpleButton title="Donate" />
+      <LightPurpleButton onClick={() => setOpen(true)} title="Donate" />
+      <DonationForm amount={amount} open={open} setOpen={setOpen} />
     </BoxWrap>
   );
 };

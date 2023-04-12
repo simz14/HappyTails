@@ -7,6 +7,7 @@ export let theme = createTheme({
         root: {
           boxShadow: "0px 0px 9px 5px #f9f7f3",
           padding: "0.5rem",
+          width: "100%",
         },
       },
     },
@@ -78,7 +79,6 @@ theme = createTheme(theme, {
         root: {
           [theme.breakpoints.down("1030")]: {
             width: "100%",
-            marginLeft: "0.5rem",
             marginTop: " 1rem",
           },
         },
