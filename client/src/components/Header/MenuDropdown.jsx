@@ -102,7 +102,7 @@ const MenuDropdown = () => {
           <ListItemText primary="Dog List" />
         </ListItemButton>
 
-        <ListItemButton onClick={() => handleClickMenuItem("/")}>
+        <ListItemButton onClick={() => handleClickMenuItem("/howitworks")}>
           <ListItemText primary="How It Works" />
         </ListItemButton>
 

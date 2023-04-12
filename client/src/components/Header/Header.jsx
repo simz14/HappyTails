@@ -85,7 +85,10 @@ const Header = () => {
           <div className="navLinks">
             <Button title={"Home"} onClick={() => navigate("/")} />
             <Button title={"Dog list"} onClick={() => navigate("/doglist")} />
-            <Button title={"How It Works"} onClick={() => navigate("/")} />
+            <Button
+              title={"How It Works"}
+              onClick={() => navigate("/howitworks")}
+            />
             <PopOver
               title={"Pages"}
               items={[
