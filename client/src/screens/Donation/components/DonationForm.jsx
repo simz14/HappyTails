@@ -78,10 +78,9 @@ const DonationForm = ({ open, setOpen, amount }) => {
                 label="First name"
                 id="outlined-size-small"
                 size="normal"
+                error={errors.firstName ? true : false}
+                helperText={errors.firstName?.message}
               />
-              {errors.firstName && (
-                <ErrorMsg role="alert">{errors.firstName.message}</ErrorMsg>
-              )}
             </div>
 
             <div className="field">
@@ -90,50 +89,60 @@ const DonationForm = ({ open, setOpen, amount }) => {
                 label="Last name"
                 id="outlined-size-small"
                 size="normal"
+                error={errors.lastName ? true : false}
+                helperText={errors.lastName?.message}
               />
-              {errors.lastName && (
-                <ErrorMsg role="alert">{errors.lastName.message}</ErrorMsg>
-              )}
             </div>
           </div>
 
           <TextField
-            {...register("cardNumber", { required: "Card number is required" })}
+            {...register("cardNumber", {
+              required: "Card number is required",
+              pattern: {
+                value: /(?:\d[ -]*?){13,16}/,
+                message: "Card number is invalid",
+              },
+            })}
             label="Card number"
             id="outlined-size-small"
             size="normal"
+            error={errors.cardNumber ? true : false}
+            helperText={errors.cardNumber?.message}
           />
-          {errors.cardNumber && (
-            <ErrorMsg role="alert">{errors.cardNumber.message}</ErrorMsg>
-          )}
 
           <div className="fieldsWrap">
             <div className="field">
               <TextField
                 {...register("expirationDate", {
                   required: "Expiration date is required",
+                  pattern: {
+                    value: /^(0[1-9]|1[0-2])\/[0-9]{2}$/,
+                    message: "Expiration date is invalid",
+                  },
                 })}
                 label="Expiration date"
                 id="outlined-size-small"
                 size="normal"
+                error={errors.expirationDate ? true : false}
+                helperText={errors.expirationDate?.message}
               />
-              {errors.expirationDate && (
-                <ErrorMsg role="alert">
-                  {errors.expirationDate.message}
-                </ErrorMsg>
-              )}
             </div>
 
             <div className="field">
               <TextField
-                {...register("cvv", { required: "CVV is required" })}
+                {...register("cvv", {
+                  required: "CVV is required",
+                  pattern: {
+                    value: /^[0-9]{3,4}$/,
+                    message: "CVV is invalid",
+                  },
+                })}
                 label="CVV"
                 id="outlined-size-small"
                 size="normal"
+                error={errors.cvv ? true : false}
+                helperText={errors.cvv?.message}
               />
-              {errors.cvv && (
-                <ErrorMsg role="alert">{errors.cvv.message}</ErrorMsg>
-              )}
             </div>
           </div>
         </DialogContent>
