@@ -8,7 +8,7 @@ import { TfiFacebook, TfiTwitterAlt } from "react-icons/tfi";
 import { BsInstagram } from "react-icons/bs";
 import { FaTiktok } from "react-icons/fa";
 import { InputAdornment, TextField } from "@mui/material";
-import PurpleButton from "../PuprleButton";
+import PurpleButton from "../Buttons/PuprleButton";
 import { Spacer } from "../Spacer";
 
 const FooterWrapper = styled.div`

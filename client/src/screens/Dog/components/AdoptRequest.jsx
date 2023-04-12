@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import dogAdopt from "../../../assets/dogAdopt.png";
 import { Container } from "../../../components/Container";
-import PurpleButton from "../../../components/PuprleButton";
+import PurpleButton from "../../../components/Buttons/PuprleButton";
 import ArticleIcon from "@mui/icons-material/Article";
 import { Spacer } from "../../../components/Spacer";
 import { useNavigate } from "react-router";

@@ -30,11 +30,11 @@ const SwiperWrap = styled.div`
     width: 100%;
     object-fit: cover;
     border-radius: ${({ theme }) => theme.radius.small};
-    max-height: 20rem;
+    max-height: ${({ maxHeight }) => maxHeight};
   }
 `;
 
-const SwiperComp = ({ images, swiperName }) => {
+const SwiperComp = ({ maxHeight, images, swiperName }) => {
   useEffect(() => {
     const swiper = new Swiper(`.${swiperName}`, {
       loop: true,
@@ -49,7 +49,7 @@ const SwiperComp = ({ images, swiperName }) => {
   }, []);
 
   return (
-    <SwiperWrap swiperName={swiperName}>
+    <SwiperWrap maxHeight={maxHeight} swiperName={swiperName}>
       <div className={swiperName}>
         <div className="swiper-wrapper">
           {images?.map((image) => {

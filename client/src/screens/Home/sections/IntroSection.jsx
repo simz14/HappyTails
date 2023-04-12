@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaArrowCircleRight } from "react-icons/fa";
-import PurpleButton from "../../../components/PuprleButton";
+import PurpleButton from "../../../components/Buttons/PuprleButton";
 import happyWomenImg from "../../../assets/womenHappyDog.png";
 import OptionsSection from "./OptionsSections";
 import { Spacer } from "../../../components/Spacer";

@@ -112,13 +112,13 @@ const MenuDropdown = () => {
         </ListItemButton>
         <Collapse in={openPages} timeout="auto" unmountOnExit>
           <List component="div" disablePadding sx={{ paddingLeft: "1rem" }}>
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton onClick={() => handleClickMenuItem("/donation")}>
               <ListItemText primary="Donation" />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton>
               <ListItemText primary="About us" />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton>
               <ListItemText primary="Contact Us" />
             </ListItemButton>
           </List>

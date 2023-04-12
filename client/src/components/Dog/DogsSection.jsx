@@ -3,7 +3,7 @@ import { Container } from "../Container";
 import styled from "styled-components";
 import Dog from "./Dog";
 import { DogsContext } from "../../context/DogsContext";
-import PurpleButton from "../PuprleButton";
+import PurpleButton from "../Buttons/PuprleButton";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { Spacer } from "../Spacer";
 import { useNavigate } from "react-router";

@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Button from "../Button";
+import Button from "../Buttons/Button";
 import { Container } from "../Container";
 import PopOver from "../PopOver";
-import PurpleButton from "../PuprleButton";
+import PurpleButton from "../Buttons/PuprleButton";
 import MenuDropdown from "./MenuDropdown";
 import { FaPaw } from "react-icons/fa";
 import Logo from "../../assets/HappyTailsLogoOf.png";
@@ -89,7 +89,7 @@ const Header = () => {
             <PopOver
               title={"Pages"}
               items={[
-                { title: "Donation", href: "/donations" },
+                { title: "Donation", href: "/donation" },
                 { title: "About us", href: "/aboutus" },
                 { title: "Contact Us", href: "/contactus" },
               ]}

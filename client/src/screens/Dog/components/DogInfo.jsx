@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PurpleButton from "../../../components/PuprleButton";
+import PurpleButton from "../../../components/Buttons/PuprleButton";
 import ArticleIcon from "@mui/icons-material/Article";
 import SwiperComp from "../../../components/Swiper";
 import { useNavigate } from "react-router";
@@ -56,7 +56,7 @@ const DogInfo = ({ dog }) => {
   const navigate = useNavigate();
   return (
     <InfoWrap>
-      <SwiperComp swiperName="swiper1" images={dog?.imgs} />
+      <SwiperComp maxHeight="20rem" swiperName="swiper1" images={dog?.imgs} />
       <Info>
         <h3>Facts about me</h3>
         <div className="facts">

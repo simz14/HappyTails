@@ -1,8 +1,8 @@
 export const spacing = {
   padding: {
-    small: "15px",
-    large: "20px",
-    xLarge: "30px",
+    small: "1rem",
+    large: "2rem",
+    xLarge: "3rem",
   },
   space: {
     xs: "4rem",
