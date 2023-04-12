@@ -98,25 +98,9 @@ const MenuDropdown = () => {
           <ListItemText primary="Home" />
         </ListItemButton>
 
-        <ListItemButton onClick={handleClickCollapseDogList}>
-          <ListItemText primary="Dog List" />{" "}
-          {openDogList ? <BsChevronUp /> : <BsChevronDown />}
+        <ListItemButton onClick={() => handleClickMenuItem("/doglist")}>
+          <ListItemText primary="Dog List" />
         </ListItemButton>
-
-        <Collapse in={openDogList} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding sx={{ paddingLeft: "1rem" }}>
-            <ListItemButton
-              onClick={() => handleClickMenuItem("/doglist")}
-              sx={{ pl: 4 }}
-            >
-              <ListItemText primary="Dog List" />
-            </ListItemButton>
-
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText primary="Dog Profile" />
-            </ListItemButton>
-          </List>
-        </Collapse>
 
         <ListItemButton onClick={() => handleClickMenuItem("/")}>
           <ListItemText primary="How It Works" />
@@ -135,20 +119,10 @@ const MenuDropdown = () => {
               <ListItemText primary="About us" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText primary="FAQ" />
-            </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText primary="Team" />
-            </ListItemButton>{" "}
-            <ListItemButton sx={{ pl: 4 }}>
               <ListItemText primary="Contact Us" />
             </ListItemButton>
           </List>
         </Collapse>
-
-        <ListItemButton onClick={() => handleClickMenuItem("/volunteer")}>
-          <ListItemText primary="Volunteer" />
-        </ListItemButton>
       </Popover>
     </div>
   );

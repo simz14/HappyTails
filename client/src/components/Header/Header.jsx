@@ -86,14 +86,11 @@ const Header = () => {
             <Button title={"Home"} onClick={() => navigate("/")} />
             <Button title={"Dog list"} onClick={() => navigate("/doglist")} />
             <Button title={"How It Works"} onClick={() => navigate("/")} />
-            <Button title={"Volunteer"} onClick={() => navigate("/")} />
             <PopOver
               title={"Pages"}
               items={[
                 { title: "Donation", href: "/donations" },
                 { title: "About us", href: "/aboutus" },
-                { title: "FAQ", href: "/faq" },
-                { title: "Team", href: "/team" },
                 { title: "Contact Us", href: "/contactus" },
               ]}
             />

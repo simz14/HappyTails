@@ -214,11 +214,6 @@ const Footer = () => {
                     <span>Dog list</span>
                   </a>
                 </li>
-                <li>
-                  <a href="#">
-                    <span>Volunteer</span>
-                  </a>
-                </li>
               </ul>
             </div>
             <div className="section second">
@@ -229,16 +224,7 @@ const Footer = () => {
                     <span>About Us</span>
                   </a>
                 </li>
-                <li>
-                  <a href="#">
-                    <span>Our Team</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>FAQ's</span>
-                  </a>
-                </li>
+
                 <li>
                   <a href="#">
                     <span>Contact</span>
