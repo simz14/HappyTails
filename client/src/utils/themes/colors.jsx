@@ -10,4 +10,5 @@ export const colors = {
   lightBcgBlue: "  #F5F9FA",
   lightBcgPink: "#fffcf8",
   brightYellow: "#ffb20c",
+  green: "#85bf83",
 };
