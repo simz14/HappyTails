@@ -9,6 +9,9 @@ import Swal from "sweetalert2";
 import PurpleButton from "../../components/Buttons/PuprleButton";
 import ScrollTop from "../../components/ScrollTop";
 import ShelterInfo from "./components/ShelterInfo";
+import { Spacer } from "../../components/Spacer";
+import AskedQuestions from "../../components/AskedQuestions/AskedQuestions";
+import OurPartnersSection from "../../components/PartnersSection";
 
 const ContactUsWrap = styled.div`
   display: grid;
@@ -32,6 +35,10 @@ const ContactUsWrap = styled.div`
   }
   button {
     justify-content: center;
+  }
+
+  @media (max-width: 1030px) {
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -147,13 +154,15 @@ const ContactUs = () => {
                 </DialogContent>
               </div>
             </div>
-
             <div>
               <ShelterInfo />
             </div>
+            <Spacer size="s" />
           </ContactUsWrap>
         </Container>
       </PawsBcg>
+      <AskedQuestions />
+      <OurPartnersSection />
     </Layout>
   );
 };

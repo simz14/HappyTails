@@ -4,14 +4,16 @@ import { FaTiktok } from "react-icons/fa";
 import { TfiFacebook, TfiTwitterAlt } from "react-icons/tfi";
 import styled from "styled-components";
 import Map from "./Map";
+import { Spacer } from "../../../components/Spacer";
 
 const ContentWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  gap: 2rem;
   .iconsWrapper {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
 
     a {
       display: flex;

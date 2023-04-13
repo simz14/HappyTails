@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Container } from "../../../components/Container";
-import partner1 from "../../../assets/partners/partner1.png";
-import partner2 from "../../../assets/partners/partner2.png";
-import partner3 from "../../../assets/partners/partner3.png";
-import partner4 from "../../../assets/partners/partner4.png";
-import { Spacer } from "../../../components/Spacer";
+import { Container } from "./Container";
+import partner1 from "../assets/partners/partner1.png";
+import partner2 from "../assets/partners/partner2.png";
+import partner3 from "../assets/partners/partner3.png";
+import partner4 from "../assets/partners/partner4.png";
+import { Spacer } from "./Spacer";
 
 const ContentContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.lightBcgBlue};

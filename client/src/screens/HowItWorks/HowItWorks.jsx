@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 import IntroSection from "./components/IntroSection";
 import StepsSection from "./components/StepsSection";
 import ClientsSection from "../Home/sections/ClientsSection";
-import OurPartnersSection from "./components/PartnersSection";
+import OurPartnersSection from "../../components/PartnersSection";
 import LearnMore from "../Home/sections/LearnMore";
 import ScrollTop from "../../components/ScrollTop";
 
