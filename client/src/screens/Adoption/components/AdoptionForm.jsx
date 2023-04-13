@@ -8,8 +8,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import PurpleButton from "../../../components/Buttons/PuprleButton";
 import PetsIcon from "@mui/icons-material/Pets";
 import dayjs from "dayjs";
-import { validateAdoptionData } from "../../../services/validations";
 import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
 
 const AdoptionWrapper = styled.div`
   display: grid;
@@ -35,109 +35,117 @@ const AdoptionWrapper = styled.div`
 `;
 
 const AdoptionForm = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [reason, setReason] = useState("");
-  const [age, setAge] = useState("");
-  const [date, setDate] = useState(dayjs(Date.now()));
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const handleChange = (state, value) => {
-    state(value);
-  };
+  const {
+    register,
+    formState: { errors },
+    reset,
+    handleSubmit,
+  } = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      age: null,
+      email: "",
+      phoneNumber: null,
+      date: dayjs(Date.now()),
+      reason: "",
+    },
+  });
 
   const handleClickAdoption = () => {
-    try {
-      validateAdoptionData({
-        firstName,
-        lastName,
-        email,
-        phone,
-        reason,
-        age,
-        date,
-      });
-      Swal.fire("And it's done!", "We look forward to meeting you.", "success");
-      setErrorMsg("");
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setReason("");
-      setAge("");
-      setDate(dayjs("2023-04-20"));
-    } catch (e) {
-      setErrorMsg(e.message);
-    }
+    Swal.fire("And it's done.", "We look forward to meeting you!", "success");
+    reset();
   };
 
   return (
     <Container>
       <AdoptionWrapper>
         <TextField
+          {...register("firstName", {
+            required: "First name is required",
+          })}
           label="First name"
           id="outlined-size-small"
-          value={firstName}
           size="normal"
-          onChange={(e) => handleChange(setFirstName, e.target.value)}
+          error={errors.firstName ? true : false}
+          helperText={errors.firstName?.message}
         />
         <TextField
+          {...register("lastName", {
+            required: "Last name is required",
+          })}
           label="Last name"
           id="outlined-size-small"
-          value={lastName}
           size="normal"
-          onChange={(e) => handleChange(setLastName, e.target.value)}
+          error={errors.lastName ? true : false}
+          helperText={errors.lastName?.message}
         />
         <TextField
+          {...register("age", {
+            required: "Age is required",
+          })}
           label="Age"
           id="outlined-size-small"
-          value={age}
           size="normal"
           type="number"
-          onChange={(e) => handleChange(setAge, e.target.value)}
+          error={errors.age ? true : false}
+          helperText={errors.age?.message}
         />
         <TextField
+          {...register("email", {
+            required: "Email adress is required",
+            pattern: {
+              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+              message: "Email is invalid",
+            },
+          })}
           label="Email adress"
           id="outlined-size-small"
-          value={email}
           size="normal"
-          onChange={(e) => handleChange(setEmail, e.target.value)}
+          error={errors.email ? true : false}
+          helperText={errors.email?.message}
         />
         <TextField
+          {...register("phoneNumber", {
+            required: "Phine number is required",
+          })}
           label="Phone number"
           id="outlined-size-small"
-          value={phone}
           size="normal"
-          onChange={(e) => handleChange(setPhone, e.target.value)}
+          error={errors.phoneNumber ? true : false}
+          helperText={errors.phoneNumber?.message}
         />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
+            {...register("date", {
+              required: "Date of meet is required",
+            })}
             label="Date of meet"
-            value={date}
-            onChange={(e) => setDate(e)}
+            error={errors.date ? true : false}
+            helperText={errors.date?.message}
           />
         </LocalizationProvider>
         <TextField
+          {...register("reason", {
+            required: "Reason is required",
+          })}
           className="reason"
           label="Why did you choose this dog?"
           id="outlined-size-small"
-          value={reason}
           size="normal"
           multiline
           rows={4}
-          onChange={(e) => handleChange(setReason, e.target.value)}
+          error={errors.reason ? true : false}
+          helperText={errors.reason?.message}
         />
         <div className="button">
           <PurpleButton
             iconBefore={true}
             icon={<PetsIcon sx={{ fontSize: "large" }} />}
             title={"Start adoption"}
-            onClick={handleClickAdoption}
+            onClick={handleSubmit(handleClickAdoption)}
           />
         </div>
-        {errorMsg && <span className="error">{errorMsg}</span>}
       </AdoptionWrapper>
     </Container>
   );

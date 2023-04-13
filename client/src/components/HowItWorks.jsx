@@ -12,6 +12,7 @@ const HowItWorksWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
   & .stepsWrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

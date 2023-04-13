@@ -81,7 +81,7 @@ const LearnMore = styled.div`
   }
 `;
 
-const LearnMoreSection = (props) => {
+const LearnMoreSection = () => {
   return (
     <Container>
       <LearnMore>
@@ -99,7 +99,7 @@ const LearnMoreSection = (props) => {
           <div>
             <h2>Rehome a dog</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <LearnMoreArrow navigateTo="/rehome" color={"#322258"} />
+            <LearnMoreArrow navigateTo="/doglist" color={"#322258"} />
           </div>
         </div>
       </LearnMore>
