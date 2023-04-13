@@ -23,7 +23,7 @@ const DogDetail = () => {
 
   return (
     <Layout>
-      <ScrollTop />
+      <ScrollTop dependecy={id} />
       <PawsBcg>
         <Container>
           <Spacer size="s" />

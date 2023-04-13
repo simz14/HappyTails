@@ -11,6 +11,7 @@ import Donation from "./screens/Donation/Donation";
 import HowItWorks from "./screens/HowItWorks/HowItWorks";
 import ContactUs from "./screens/ContactUs/ContactUs";
 import ScrollTop from "./components/ScrollTop";
+import AboutUs from "./screens/AboutUs/AboutUs";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route exact path="/donation" element={<Donation />} />
           <Route exact path="/howitworks" element={<HowItWorks />} />
           <Route exact path="/contactus" element={<ContactUs />} />
+          <Route exact path="/aboutus" element={<AboutUs />} />
         </Routes>
       </DogsProvider>
     </Theme>

@@ -7,7 +7,7 @@ import CounterWidget from "../../../components/CounterWidget";
 
 const DescriptionWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.lightPurple};
-  .qoute {
+  .quote {
     padding: 0 1rem;
     border-left: 5px solid ${({ theme }) => theme.colors.mediumPurple};
     gap: 1rem;
@@ -41,7 +41,7 @@ const DescriptionSection = () => {
           the community on responsible pet ownership and promote adoption.
         </p>
 
-        <div className="qoute">
+        <div className="quote">
           <span>
             "Every dog deserves a loving home, and we're here to help make that
             happen."

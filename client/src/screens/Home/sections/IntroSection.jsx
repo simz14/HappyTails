@@ -36,7 +36,7 @@ const IntroWrapper = styled.div`
   & .introText {
     max-width: 2000px;
     padding: 0 15%;
-    & .qoute {
+    & .quote {
       font-family: ${(props) => props.theme.typography.family.basic};
       font-size: ${(props) => props.theme.typography.size.xLarge};
       margin-bottom: 3rem;
@@ -55,7 +55,7 @@ const IntroWrapper = styled.div`
         justify-items: center;
         text-align: center;
       }
-      & .qoute {
+      & .quote {
         font-size: ${(props) => props.theme.typography.size.large};
       }
     }
@@ -85,7 +85,7 @@ const IntroSection = () => {
           <Spacer size="s" />
           <div className="content">
             <h1>Adoption is a loving option</h1>
-            <p className="qoute">
+            <p className="quote">
               Adopting a dog is a journey of growth, love, and patience. It's
               not always easy, but the reward of a loyal companion who will
               always be there for you is priceless.

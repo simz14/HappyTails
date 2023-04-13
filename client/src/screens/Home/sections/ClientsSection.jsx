@@ -22,7 +22,7 @@ const Intro = styled.div`
     border-radius: ${(props) => props.theme.spacing.padding.large};
   }
 
-  & .qoute {
+  & .quote {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -37,14 +37,14 @@ const Intro = styled.div`
 
   @media (max-width: 750px) {
     grid-template-columns: 1fr;
-    & .qoute {
+    & .quote {
       min-width: 80%;
       padding: 1.5rem;
     }
   }
 `;
 
-const ClientsQoutes = styled.div`
+const ClientsQuotes = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem;
@@ -86,7 +86,7 @@ const ClientsSection = () => {
           <div>
             <img className="dogImage" src={whiteDogWomen} alt="dog" />
           </div>
-          <div className="qoute">
+          <div className="quote">
             <p>
               “The first day we bought Miso home, he did’nt cry at all on the
               car ride home. He was incredibely curious.”
@@ -95,7 +95,7 @@ const ClientsSection = () => {
           </div>
         </Intro>
         <Spacer size="s" />
-        <ClientsQoutes>
+        <ClientsQuotes>
           <div>
             <p>
               “I was hesitant about adopting a dog at first, but it's been such
@@ -148,7 +148,7 @@ const ClientsSection = () => {
               </div>
             </div>
           </div>
-        </ClientsQoutes>
+        </ClientsQuotes>
         <Spacer size="s" />
       </Container>
     </ClintesWrapp>

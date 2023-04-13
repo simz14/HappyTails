@@ -200,17 +200,17 @@ const Footer = () => {
               <h3>Navigation</h3>
               <ul>
                 <li>
-                  <a href="#">
+                  <a href="/howitqworks">
                     <span>How it works</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/donation">
                     <span>Donation</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/doglist">
                     <span>Dog list</span>
                   </a>
                 </li>
@@ -220,13 +220,13 @@ const Footer = () => {
               <h3>Our Organization</h3>
               <ul>
                 <li>
-                  <a href="#">
+                  <a href="/aboutus">
                     <span>About Us</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="#">
+                  <a href="/contactus">
                     <span>Contact</span>
                   </a>
                 </li>
