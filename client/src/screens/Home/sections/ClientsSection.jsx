@@ -3,10 +3,6 @@ import styled from "styled-components";
 import whiteDogWomen from "../../../assets/whiteDogWomen.jpg";
 import { Container } from "../../../components/Container";
 import { FaUserAlt } from "react-icons/fa";
-import rehomePurple from "../../../assets/rehomePurple.png";
-import adoptionWhite from "../../../assets/adoptionWhite.png";
-import beagleAlone from "../../../assets/beagleAlone.png";
-import { FaArrowCircleRight } from "react-icons/fa";
 import { Spacer } from "../../../components/Spacer";
 
 const ClintesWrapp = styled.div`
@@ -48,7 +44,7 @@ const Intro = styled.div`
   }
 `;
 
-const ClientsQutes = styled.div`
+const ClientsQoutes = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem;
@@ -74,83 +70,7 @@ const ClientsQutes = styled.div`
   }
 `;
 
-const LearnMore = styled.div`
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  & .beagle {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 140%;
-  }
-  & img {
-    max-width: 30%;
-    height: auto;
-    object-fit: contain;
-  }
-  & span {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: 0.5s ease;
-    cursor: pointer;
-    &:hover {
-      transform: translateY(-8px);
-    }
-  }
-
-  & .purple {
-    display: flex;
-    background-color: ${(props) => props.theme.colors.mediumPurple};
-    border-radius: 20px 0 0 20px;
-    padding: ${(props) => props.theme.spacing.padding.xLarge};
-    padding-right: 50px;
-    & span,
-    h2,
-    p {
-      color: white;
-    }
-  }
-  & .yellow {
-    display: flex;
-    background-color: ${(props) => props.theme.colors.brightYellow};
-    border-radius: 0 20px 20px 0;
-    padding: ${(props) => props.theme.spacing.padding.xLarge};
-    padding-left: 50px;
-    & span,
-    h2,
-    p {
-      color: ${(props) => props.theme.colors.darkestPurple};
-    }
-  }
-  @media (max-width: 1030px) {
-    & .beagle {
-      display: none;
-    }
-    & .purple,
-    .yellow {
-      display: flex;
-      flex-direction: column;
-      padding-right: ${(props) => props.theme.spacing.padding.xLarge};
-      text-align: center;
-      align-items: center;
-    }
-  }
-
-  @media (max-width: 750px) {
-    display: flex;
-    flex-direction: column;
-    & .purple {
-      border-radius: 20px 20px 0 0;
-    }
-    & .yellow {
-      border-radius: 0 0 20px 20px;
-    }
-  }
-`;
-
-const ClientsSection = (props) => {
+const ClientsSection = () => {
   return (
     <ClintesWrapp>
       <Container>
@@ -175,7 +95,7 @@ const ClientsSection = (props) => {
           </div>
         </Intro>
         <Spacer size="s" />
-        <ClientsQutes>
+        <ClientsQoutes>
           <div>
             <p>
               “I was hesitant about adopting a dog at first, but it's been such
@@ -228,31 +148,7 @@ const ClientsSection = (props) => {
               </div>
             </div>
           </div>
-        </ClientsQutes>
-        <Spacer size="s" />
-        <LearnMore>
-          <img className="beagle " src={beagleAlone} alt="beagle" />
-          <div className="purple">
-            <img src={adoptionWhite} alt="adopt" />
-            <div>
-              <h2>Adopt a dog</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <span>
-                Learn more <FaArrowCircleRight />
-              </span>
-            </div>
-          </div>
-          <div className="yellow">
-            <img src={rehomePurple} alt="rehome" />
-            <div>
-              <h2>Rehome a dog</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <span>
-                Learn more <FaArrowCircleRight />
-              </span>
-            </div>
-          </div>
-        </LearnMore>
+        </ClientsQoutes>
         <Spacer size="s" />
       </Container>
     </ClintesWrapp>

@@ -8,7 +8,7 @@ import donation5 from "../../../assets/donation/donation5.jpg";
 const ContentWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10%;
+  gap: 5%;
 
   .images {
     position: relative;
@@ -21,42 +21,49 @@ const ContentWrap = styled.div`
     .smallImg {
       border-radius: ${({ theme }) => theme.radius.large};
       width: 45%;
-      height: 200px;
+      height: 50%;
       object-fit: cover;
       border: 8px solid white;
       position: absolute;
       top: -10%;
       right: -10%;
-      @media (max-width: 1030px) {
-        right: 0;
-      }
     }
   }
 
-  .step {
-    display: flex;
-    gap: 1rem;
-    .num {
-      padding: ${({ theme }) => theme.spacing.padding.large};
-      border-radius: ${({ theme }) => theme.radius.small};
+  .steps {
+    .step {
       display: flex;
-      align-items: center;
-      height: 2rem;
-      width: 2rem;
-      justify-content: center;
-      h2 {
-        color: white;
+      gap: 1rem;
+      margin: 1rem;
+      .num {
+        padding: ${({ theme }) => theme.spacing.padding.large};
+        border-radius: ${({ theme }) => theme.radius.small};
+        display: flex;
+        align-items: center;
+        height: 2rem;
+        width: 2rem;
+        justify-content: center;
+        h2 {
+          color: white;
+        }
       }
-    }
-    .green {
-      background-color: ${({ theme }) => theme.colors.green};
-    }
-    .yellow {
-      background-color: ${({ theme }) => theme.colors.brightYellow};
+      .green {
+        background-color: ${({ theme }) => theme.colors.green};
+        margin-left: 3rem;
+      }
+      .yellow {
+        background-color: ${({ theme }) => theme.colors.brightYellow};
+      }
     }
   }
   @media (max-width: 1030px) {
     grid-template-columns: 1fr;
+    .images .smallImg {
+      right: 0;
+    }
+    .steps .step .green {
+      margin-left: 0;
+    }
   }
 `;
 
@@ -76,10 +83,7 @@ const StepsSection = () => {
             </div>
             <div>
               <h3>Browse pet profiles</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Et at purus in
-                pellentesque donec sit.
-              </p>
+              <p>Look threw all dogs available for adoption.</p>
             </div>
           </div>
           <div className="step">
@@ -89,8 +93,7 @@ const StepsSection = () => {
             <div>
               <h3>Join & message with Guardians</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur. Et at purus in
-                pellentesque donec sit.
+                Once you find a dog you want to adopt, contact our Guardians.
               </p>
             </div>
           </div>
@@ -99,11 +102,8 @@ const StepsSection = () => {
               <h2>03.</h2>
             </div>
             <div>
-              <h3>Join & message with Guardians</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Et at purus in
-                pellentesque donec sit.
-              </p>
+              <h3>Make a meet-up</h3>
+              <p>If you think you are a good fit, plan a meetup.</p>
             </div>
           </div>
           <div className="step">
@@ -111,11 +111,8 @@ const StepsSection = () => {
               <h2>04.</h2>
             </div>
             <div>
-              <h3>Join & message with Guardians</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Et at purus in
-                pellentesque donec sit.
-              </p>
+              <h3>Make a Legal Pet Adoption</h3>
+              <p>Finally, adopt your new friend.</p>
             </div>
           </div>
         </div>
