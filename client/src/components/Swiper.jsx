@@ -1,9 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import Swiper, { Navigation } from "swiper";
+import Swiper, { Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 const SwiperWrap = styled.div`
   width: 100%;
@@ -23,6 +24,10 @@ const SwiperWrap = styled.div`
   .swiper-button-prev:after {
     font-size: medium;
     font-weight: 600;
+    color: ${({ theme }) => theme.colors.brightYellow};
+    background-color: white;
+    padding: 1rem 1.2rem;
+    border-radius: 100px;
   }
 
   img {
@@ -44,7 +49,11 @@ const SwiperComp = ({ maxHeight, images, swiperName }) => {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      modules: [Navigation],
+      autoplay: {
+        delay: 3000,
+      },
+
+      modules: [Navigation, Autoplay],
     });
   }, []);
 

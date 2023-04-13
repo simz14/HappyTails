@@ -17,7 +17,6 @@ const HeaderWrapper = styled.div`
 
   & nav {
     display: flex;
-    min-height: 5rem;
     align-items: center;
     position: relative;
     width: 100%;
@@ -68,6 +67,17 @@ const HeaderWrapper = styled.div`
   @media (max-width: 510px) {
     & .phoneConsultationsWrap {
       display: none;
+    }
+    & .lessThen1030 {
+      display: flex;
+      & svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    & .logoImg {
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 `;

@@ -19,7 +19,7 @@ const OptionsWrapper = styled.div`
   @media (max-width: 750px) {
     display: flex;
     flex-direction: column;
-    bottom: 13rem;
+    bottom: 15rem;
   }
 `;
 
@@ -49,7 +49,7 @@ const OptionsSection = () => {
           }}
         >
           <img src={adoptDog} alt="adopt" />
-          <h3 >Want to adopt a dog?</h3>
+          <h3>Want to adopt a dog?</h3>
           <span>
             Here you will find the most adorable dog to give a wonderful new
             home.
@@ -61,7 +61,7 @@ const OptionsSection = () => {
           }}
         >
           <img src={rehomeDog} alt="rehome" />
-          <h3 >Need to rehome a dog?</h3>
+          <h3>Need to rehome a dog?</h3>
           <span>We can help with finding the best home for you dog.</span>
         </Option>
         <Option
@@ -70,7 +70,7 @@ const OptionsSection = () => {
           }}
         >
           <img src={donation} alt="donation" />
-          <h3 >Make a donation.</h3>
+          <h3>Make a donation.</h3>
           <span>
             Help us save our four-legged friends all around the world.
           </span>
