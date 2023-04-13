@@ -8,11 +8,13 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import PurpleButton from "../../components/Buttons/PuprleButton";
 import ScrollTop from "../../components/ScrollTop";
+import ShelterInfo from "./components/ShelterInfo";
 
 const ContactUsWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: start;
+  gap: 5%;
   .fieldsWrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -26,6 +28,7 @@ const ContactUsWrap = styled.div`
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    padding: 0;
   }
   button {
     justify-content: center;
@@ -145,7 +148,9 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div></div>
+            <div>
+              <ShelterInfo />
+            </div>
           </ContactUsWrap>
         </Container>
       </PawsBcg>

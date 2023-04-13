@@ -4,6 +4,6 @@ const ScrollTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  return <></>;
+  return null;
 };
 export default ScrollTop;
