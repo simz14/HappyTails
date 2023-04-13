@@ -10,6 +10,7 @@ import KnowBetter from "./components/KnowBetter";
 import AdoptRequest from "./components/AdoptRequest";
 import DogsSection from "../../components/Dog/DogsSection";
 import PawsBcg from "../../components/PawsBcg";
+import ScrollTop from "../../components/ScrollTop";
 
 const DogDetail = () => {
   const { id } = useParams();
@@ -22,6 +23,7 @@ const DogDetail = () => {
 
   return (
     <Layout>
+      <ScrollTop />
       <PawsBcg>
         <Container>
           <Spacer size="s" />

@@ -10,6 +10,7 @@ import Adoption from "./screens/Adoption/Adoption";
 import Donation from "./screens/Donation/Donation";
 import HowItWorks from "./screens/HowItWorks/HowItWorks";
 import ContactUs from "./screens/ContactUs/ContactUs";
+import ScrollTop from "./components/ScrollTop";
 
 const App = () => {
   return (

@@ -5,6 +5,7 @@ import Intro from "./components/Intro";
 import { DogsContext } from "../../context/DogsContext";
 import PawsBcg from "../../components/PawsBcg";
 import AdoptionForm from "./components/AdoptionForm";
+import ScrollTop from "../../components/ScrollTop";
 
 const Adoption = () => {
   const { id } = useParams();
@@ -17,6 +18,7 @@ const Adoption = () => {
 
   return (
     <Layout>
+      <ScrollTop />
       <PawsBcg>
         <Intro dog={dog} />
       </PawsBcg>

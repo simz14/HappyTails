@@ -4,6 +4,7 @@ import PurpleButton from "../../../components/Buttons/PuprleButton";
 import happyWomenImg from "../../../assets/womenHappyDog.png";
 import OptionsSection from "./OptionsSections";
 import { Spacer } from "../../../components/Spacer";
+import { useNavigate } from "react-router";
 
 const BcgImage = styled.div`
   height: 100%;
@@ -76,6 +77,7 @@ const IntroWrapper = styled.div`
 `;
 
 const IntroSection = () => {
+  const navigate = useNavigate();
   return (
     <HomeWrapper>
       <IntroWrapper>
@@ -92,6 +94,7 @@ const IntroSection = () => {
               icon={<FaArrowCircleRight />}
               iconAfter={true}
               title={"Contact Us"}
+              onClick={() => navigate("/contactus")}
             />
           </div>
         </div>

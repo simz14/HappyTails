@@ -5,8 +5,9 @@ import { Container } from "../../components/Container";
 import styled from "styled-components";
 import { DialogContent, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import LightPurpleButton from "../../components/Buttons/LightPurpleButton";
 import Swal from "sweetalert2";
+import PurpleButton from "../../components/Buttons/PuprleButton";
+import ScrollTop from "../../components/ScrollTop";
 
 const ContactUsWrap = styled.div`
   display: grid;
@@ -25,6 +26,9 @@ const ContactUsWrap = styled.div`
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+  }
+  button {
+    justify-content: center;
   }
 `;
 
@@ -51,6 +55,7 @@ const ContactUs = () => {
 
   return (
     <Layout>
+      <ScrollTop />
       <PawsBcg>
         <Container>
           <ContactUsWrap>
@@ -135,10 +140,7 @@ const ContactUs = () => {
                     />
                   </div>
 
-                  <LightPurpleButton
-                    onClick={handleSubmit(onSubmit)}
-                    title="Send"
-                  />
+                  <PurpleButton onClick={handleSubmit(onSubmit)} title="Send" />
                 </DialogContent>
               </div>
             </div>

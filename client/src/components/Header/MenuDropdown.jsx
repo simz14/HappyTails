@@ -118,7 +118,7 @@ const MenuDropdown = () => {
             <ListItemButton>
               <ListItemText primary="About us" />
             </ListItemButton>
-            <ListItemButton>
+            <ListItemButton onClick={() => handleClickMenuItem("/contactus")}>
               <ListItemText primary="Contact Us" />
             </ListItemButton>
           </List>
