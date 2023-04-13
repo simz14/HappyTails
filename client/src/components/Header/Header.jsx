@@ -89,7 +89,7 @@ const Header = () => {
     <HeaderWrapper>
       <Container>
         <nav>
-          <a href="/">
+          <a href="" onClick={() => navigate("/")}>
             <img className="logoImg" src={Logo} alt="logo" />
           </a>
           <div className="navLinks">

@@ -17,6 +17,7 @@ const HowItWorksWrap = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
+    margin: 2rem;
   }
 
   @media (max-width: 1030px) {

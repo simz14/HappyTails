@@ -57,7 +57,7 @@ const OptionsSection = () => {
         </Option>
         <Option
           onClick={() => {
-            navigate("/rehome");
+            navigate("/doglist");
           }}
         >
           <img src={rehomeDog} alt="rehome" />
@@ -66,7 +66,7 @@ const OptionsSection = () => {
         </Option>
         <Option
           onClick={() => {
-            navigate("/donate");
+            navigate("/donation");
           }}
         >
           <img src={donation} alt="donation" />
