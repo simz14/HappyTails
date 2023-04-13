@@ -42,17 +42,21 @@ const DialogWrap = styled.div`
   }
 `;
 
-const ErrorMsg = styled.p`
-  color: ${({ theme }) => theme.colors.brightYellow};
-`;
-
 const DonationForm = ({ open, setOpen, amount }) => {
   const {
     register,
     formState: { errors },
     reset,
     handleSubmit,
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      cardNumber: null,
+      expirationDate: "",
+      cvv: null,
+    },
+  });
 
   const onSubmit = () => {
     setOpen(false);

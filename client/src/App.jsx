@@ -9,6 +9,7 @@ import DogList from "./screens/DogList/DogList";
 import Adoption from "./screens/Adoption/Adoption";
 import Donation from "./screens/Donation/Donation";
 import HowItWorks from "./screens/HowItWorks/HowItWorks";
+import ContactUs from "./screens/ContactUs/ContactUs";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path="/adoption/:id" element={<Adoption />} />
           <Route exact path="/donation" element={<Donation />} />
           <Route exact path="/howitworks" element={<HowItWorks />} />
+          <Route exact path="/contactus" element={<ContactUs />} />
         </Routes>
       </DogsProvider>
     </Theme>
