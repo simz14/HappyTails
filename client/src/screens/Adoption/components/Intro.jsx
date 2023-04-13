@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Spacer } from "../../../components/Spacer";
 import { Container } from "../../../components/Container";
 import AdoptionForm from "./AdoptionForm";
+import PropTypes from "prop-types";
 
 const IntroWrapper = styled.div`
   display: grid;
@@ -40,6 +41,10 @@ const Intro = ({ dog }) => {
       <Spacer size="s" />
     </Container>
   );
+};
+
+Intro.propTypes = {
+  dog: PropTypes.object.isRequired,
 };
 
 export default Intro;

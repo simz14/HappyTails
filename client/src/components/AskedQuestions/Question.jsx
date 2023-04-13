@@ -1,8 +1,9 @@
-import { Collapse, List, ListItemButton, ListItemText } from "@mui/material";
+import { Collapse, List, ListItemButton } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const QuestionWrap = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightBlue};
@@ -48,6 +49,11 @@ const Question = ({ subText, title }) => {
       </Collapse>
     </QuestionWrap>
   );
+};
+
+Question.propTypes = {
+  subText: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Question;

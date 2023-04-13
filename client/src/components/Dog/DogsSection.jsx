@@ -7,6 +7,7 @@ import PurpleButton from "../Buttons/PuprleButton";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { Spacer } from "../Spacer";
 import { useNavigate } from "react-router";
+import PropTypes from "prop-types";
 
 const DogsContainer = styled.div`
   display: flex;
@@ -74,6 +75,14 @@ const DogsSection = ({
       </DogsContainer>
     </Container>
   );
+};
+
+DogsSection.propTypes = {
+  amount: PropTypes.number.isRequired,
+  navigateTo: PropTypes.bool,
+  loadMore: PropTypes.bool,
+  hasBottomBorder: PropTypes.bool,
+  hasTopPadding: PropTypes.bool,
 };
 
 export default DogsSection;

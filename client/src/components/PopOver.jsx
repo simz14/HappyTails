@@ -1,9 +1,7 @@
 import {
-  Box,
   Button,
   ClickAwayListener,
   Link,
-  Menu,
   MenuItem,
   Paper,
   Popper,
@@ -12,6 +10,7 @@ import React, { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const PopOverWrapper = styled.div`
   display: flex;
@@ -87,6 +86,11 @@ const PopOver = ({ title, items }) => {
       </Popper>
     </PopOverWrapper>
   );
+};
+
+PopOver.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.array.isRequired,
 };
 
 export default PopOver;

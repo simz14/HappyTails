@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "../Container";
 import { Spacer } from "../Spacer";
-
 import { List } from "@mui/material";
 import Question from "./Question";
+import PropTypes from "prop-types";
 
 const AskedQuestionsWrap = styled.div`
   display: flex;
@@ -54,6 +54,10 @@ const AskedQuestions = ({ hasBottomBorder }) => {
       </AskedQuestionsWrap>
     </Container>
   );
+};
+
+AskedQuestions.propTypes = {
+  hasBottomBorder: PropTypes.bool,
 };
 
 export default AskedQuestions;

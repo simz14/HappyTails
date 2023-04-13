@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   position: relative;
@@ -23,6 +24,12 @@ const MemberBox = ({ image, name, position }) => {
       <p>{position}s</p>
     </Wrapper>
   );
+};
+
+MemberBox.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
 };
 
 export default MemberBox;

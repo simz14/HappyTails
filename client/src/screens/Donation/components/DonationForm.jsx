@@ -5,6 +5,7 @@ import styled from "styled-components";
 import LightPurpleButton from "../../../components/Buttons/LightPurpleButton";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Swal from "sweetalert2";
+import PropTypes from "prop-types";
 
 const DialogWrap = styled.div`
   padding: 3rem;
@@ -157,6 +158,12 @@ const DonationForm = ({ open, setOpen, amount }) => {
       </DialogWrap>
     </Dialog>
   );
+};
+
+DonationForm.propTypes = {
+  open: PropTypes.any,
+  setOpen: PropTypes.func.isRequired,
+  amount: PropTypes.number.isRequired,
 };
 
 export default DonationForm;

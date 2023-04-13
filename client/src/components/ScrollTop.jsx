@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 const ScrollTop = ({ dependecy }) => {
   useEffect(() => {
@@ -6,4 +7,9 @@ const ScrollTop = ({ dependecy }) => {
   }, [dependecy]);
   return null;
 };
+
+ScrollTop.propTypes = {
+  dependecy: PropTypes.any,
+};
+
 export default ScrollTop;

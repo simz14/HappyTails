@@ -2,6 +2,7 @@ import React from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const ContentWrap = styled.span`
   display: flex;
@@ -21,6 +22,11 @@ const LearnMoreArrow = ({ color, navigateTo }) => {
       Learn more <FaArrowCircleRight />
     </ContentWrap>
   );
+};
+
+LearnMoreArrow.propTypes = {
+  color: PropTypes.string,
+  navigateTo: PropTypes.string,
 };
 
 export default LearnMoreArrow;

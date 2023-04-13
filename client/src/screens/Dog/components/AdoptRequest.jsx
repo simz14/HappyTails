@@ -6,6 +6,7 @@ import PurpleButton from "../../../components/Buttons/PuprleButton";
 import ArticleIcon from "@mui/icons-material/Article";
 import { Spacer } from "../../../components/Spacer";
 import { useNavigate } from "react-router";
+import PropTypes from "prop-types";
 
 const RequestContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.lightPurple};
@@ -64,4 +65,9 @@ const AdoptRequest = ({ id }) => {
     </RequestContainer>
   );
 };
+
+AdoptRequest.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
 export default AdoptRequest;

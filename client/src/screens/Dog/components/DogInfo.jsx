@@ -4,6 +4,7 @@ import PurpleButton from "../../../components/Buttons/PuprleButton";
 import ArticleIcon from "@mui/icons-material/Article";
 import SwiperComp from "../../../components/Swiper";
 import { useNavigate } from "react-router";
+import PropTypes from "prop-types";
 
 const InfoWrap = styled.div`
   display: grid;
@@ -98,6 +99,10 @@ const DogInfo = ({ dog }) => {
       </Info>
     </InfoWrap>
   );
+};
+
+DogInfo.propTypes = {
+  dog: PropTypes.object,
 };
 
 export default DogInfo;

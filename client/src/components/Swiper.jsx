@@ -5,6 +5,7 @@ import Swiper, { Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import PropTypes from "prop-types";
 
 const SwiperWrap = styled.div`
   width: 100%;
@@ -74,6 +75,12 @@ const SwiperComp = ({ maxHeight, images, swiperName }) => {
       </div>
     </SwiperWrap>
   );
+};
+
+SwiperComp.propTypes = {
+  maxHeight: PropTypes.string.isRequired,
+  images: PropTypes.array,
+  swiperName: PropTypes.string.isRequired,
 };
 
 export default SwiperComp;

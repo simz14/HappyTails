@@ -14,7 +14,6 @@ import { IoClose } from "react-icons/io5";
 
 const MenuDropdown = () => {
   const [open, setOpen] = useState(false);
-  const [openDogList, setOpenDogList] = useState(false);
   const [openPages, setOpenPages] = useState(false);
   const ref = useRef(null);
 
@@ -33,9 +32,6 @@ const MenuDropdown = () => {
     navigate(navigateTo);
   };
 
-  const handleClickCollapseDogList = () => {
-    setOpenDogList((prev) => !prev);
-  };
   const handleClickCollapsePages = () => {
     setOpenPages((prev) => !prev);
   };

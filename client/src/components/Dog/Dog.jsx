@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const DogWrap = styled.div`
   border-radius: ${(props) => props.theme.radius.large};
@@ -57,6 +58,10 @@ const Dog = ({ dog }) => {
       </div>
     </DogWrap>
   );
+};
+
+Dog.propTypes = {
+  dog: PropTypes.object.isRequired,
 };
 
 export default Dog;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import bcgPaws from "../assets/bcgPaws.png";
-import { Spacer } from "./Spacer";
+import PropTypes from "prop-types";
 
 const PawsBcgWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.lightBcgPink};
@@ -25,6 +25,10 @@ const PawsBcg = ({ children }) => {
       <img className="paws" src={bcgPaws} alt="paws" /> {children}
     </PawsBcgWrap>
   );
+};
+
+PawsBcg.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default PawsBcg;

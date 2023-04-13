@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const MapWrapper = styled.div`
   .map {
@@ -30,6 +31,12 @@ const Map = ({ lat, lng, zoom }) => {
     );
   }
   return <div>hello</div>;
+};
+
+Map.propTypes = {
+  lat: PropTypes.number.isRequired,
+  lng: PropTypes.number.isRequired,
+  zoom: PropTypes.number.isRequired,
 };
 
 export default Map;

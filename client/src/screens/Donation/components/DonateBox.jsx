@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Button from "../../../components/Buttons/Button";
 import PetsIcon from "@mui/icons-material/Pets";
 import LightPurpleButton from "../../../components/Buttons/LightPurpleButton";
 import DonationForm from "./DonationForm";
+import PropTypes from "prop-types";
 
 const BoxWrap = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.yellow};
@@ -65,6 +65,11 @@ const DonateBox = ({ color, amount }) => {
       <DonationForm amount={amount} open={open} setOpen={setOpen} />
     </BoxWrap>
   );
+};
+
+DonateBox.propTypes = {
+  color: PropTypes.number.isRequired,
+  amount: PropTypes.number.isRequired,
 };
 
 export default DonateBox;

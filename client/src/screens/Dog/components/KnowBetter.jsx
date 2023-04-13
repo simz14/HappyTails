@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Spacer } from "../../../components/Spacer";
 import Condition from "../../../components/Condition";
+import PropTypes from "prop-types";
 
 const KnowContainer = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightBlue};
@@ -63,6 +64,10 @@ const KnowBetter = ({ dog }) => {
       <Spacer size="s" />
     </>
   );
+};
+
+KnowBetter.propTypes = {
+  dog: PropTypes.object,
 };
 
 export default KnowBetter;
