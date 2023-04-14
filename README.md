@@ -24,8 +24,27 @@
 <a target="_blank" href="https://mui.com/" rel="noreferrer"> <img src="https://mui.com/static/logo.png" alt="mui" width="40" height="40"/> </a>
 <a target="_blank" href="https://swiperjs.com/" rel="noreferrer"> <img src="https://cms-assets.tutsplus.com/uploads/users/780/posts/39427/image-upload/68747470733a2f2f6769746875622e7375726d6f6e2e6d652f696d616765732f636f6d6d6f6e2f7377697065722d6c6f676f2e737667.svg" alt="wsiper" width="40" height="40"/> </a>
 <a target="_blank" href="https://react-hook-form.com/" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/53986236?s=280&v=4" alt="react-hook-form" width="40" height="40"/> </a>
-<a target="_blank" href="https://sweetalert2.github.io/" rel="noreferrer"> <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsweetalert2.github.io%2F&psig=AOvVaw3B6d6DprJkRflrd-jgxGbZ&ust=1681578772900000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLDq95zvqf4CFQAAAAAdAAAAABAI" alt="sweetalert2" width="40" height="40"/> </a>
-<a target="_blank" href="https://sweetalert2.github.io/" rel="noreferrer"> <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsweetalert2.github.io%2F&psig=AOvVaw3B6d6DprJkRflrd-jgxGbZ&ust=1681578772900000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLDq95zvqf4CFQAAAAAdAAAAABAI" alt="sweetalert2" width="40" height="40"/> </a>
+<a target="_blank" href="https://sweetalert2.github.io/" rel="noreferrer"> <img src="https://raw.githubusercontent.com/sweetalert2/sweetalert2/master/assets/swal2-logo.png" alt="sweetalert2" width="40" height="40"/> </a>
+
+- React: a JavaScript library for building user interfaces.
+
+- HTML: the standard markup language for creating web pages.
+
+- Styled Components: a CSS-in-JS library for styling React components.
+
+- JavaScript: a programming language used to create dynamic web content.
+
+- MUI: a library of React components for building responsive, mobile-first websites.
+
+- Swiper: a library for creating mobile touch sliders and carousels.
+
+- SweetAlert2: a library for displaying pop-up messages and alerts.
+
+- React Hook Form: a library for creating forms in React.
+
+- PropTypes: a library for typechecking React props.
+
+- react-helmet-async: a library for adding metadata to React applications for improved SEO.
 
 </p>
 
