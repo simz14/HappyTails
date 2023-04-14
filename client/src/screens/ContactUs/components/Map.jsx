@@ -2,14 +2,19 @@ import React from "react";
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { CircularProgress } from "@mui/material";
 
 const MapWrapper = styled.div`
   .map {
-    width: 100%;
     height: 400px;
     border-radius: ${({ theme }) => theme.radius.large};
     border: 0.5rem solid white;
   }
+`;
+
+const LoadingWrap = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const Map = ({ lat, lng, zoom }) => {
@@ -30,7 +35,11 @@ const Map = ({ lat, lng, zoom }) => {
       </MapWrapper>
     );
   }
-  return <div>hello</div>;
+  return (
+    <LoadingWrap>
+      <CircularProgress />
+    </LoadingWrap>
+  );
 };
 
 Map.propTypes = {

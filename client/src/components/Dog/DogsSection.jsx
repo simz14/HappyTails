@@ -8,6 +8,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { Spacer } from "../Spacer";
 import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
+import { CircularProgress } from "@mui/material";
 
 const DogsContainer = styled.div`
   display: flex;
@@ -33,6 +34,12 @@ const DogsWrapper = styled.div`
   }
 `;
 
+const LoadingWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const DogsSection = ({
   amount,
   navigateTo,
@@ -40,7 +47,7 @@ const DogsSection = ({
   hasBottomBorder,
   hasTopPadding,
 }) => {
-  const { dogs } = useContext(DogsContext);
+  const { dogs, loading } = useContext(DogsContext);
   const navigate = useNavigate();
   const [dogsToShow, setDogsToShow] = useState(amount);
 
@@ -57,18 +64,27 @@ const DogsSection = ({
           <h2>Dogs available for adoption</h2>
           <p>These are some of the dogs that are looking for home.</p>
         </div>
-        <DogsWrapper>
-          {dogs.slice(0, dogsToShow).map((dog) => {
-            return <Dog key={dog.id} dog={dog} />;
-          })}
-        </DogsWrapper>
-        {dogsToShow === dogs.length || dogsToShow > dogs.length ? null : (
-          <PurpleButton
-            onClick={handleClick}
-            icon={<FaArrowCircleRight />}
-            iconAfter={true}
-            title={"View more"}
-          />
+
+        {loading ? (
+          <LoadingWrap>
+            <CircularProgress />
+          </LoadingWrap>
+        ) : (
+          <>
+            <DogsWrapper>
+              {dogs.slice(0, dogsToShow).map((dog) => {
+                return <Dog key={dog.id} dog={dog} />;
+              })}
+            </DogsWrapper>
+            {dogsToShow === dogs.length || dogsToShow > dogs.length ? null : (
+              <PurpleButton
+                onClick={handleClick}
+                icon={<FaArrowCircleRight />}
+                iconAfter={true}
+                title={"View more"}
+              />
+            )}
+          </>
         )}
 
         <Spacer size="s" />

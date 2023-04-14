@@ -19,8 +19,10 @@ export const DogsProvider = ({ children }) => {
     try {
       setLoading(true);
       const dogsData = await fetchDogs();
-      setDogs(dogsData);
-      setLoading(false);
+      setTimeout(() => {
+        setDogs(dogsData);
+        setLoading(false);
+      }, 2000);
     } catch (e) {
       setError(e.message);
     }
