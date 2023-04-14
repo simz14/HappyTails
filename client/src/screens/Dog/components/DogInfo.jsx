@@ -57,7 +57,11 @@ const DogInfo = ({ dog }) => {
   const navigate = useNavigate();
   return (
     <InfoWrap>
-      <SwiperComp maxHeight="20rem" swiperName="swiper1" images={dog?.imgs} />
+      <SwiperComp
+        maxHeight="20rem"
+        swiperName={`swipeDog-${dog?.id}`}
+        images={dog?.imgs}
+      />
       <Info>
         <h3>Facts about me</h3>
         <div className="facts">

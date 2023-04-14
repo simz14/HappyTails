@@ -47,7 +47,12 @@ const DogDetail = () => {
       </Container>
       <AdoptRequest id={id} />
       <Spacer size="s" />
-      <DogsSection navigateTo={true} hasBottomBorder={true} amount={3} />
+      <DogsSection
+        loaded={true}
+        navigateTo={true}
+        hasBottomBorder={true}
+        amount={3}
+      />
     </Layout>
   );
 };
