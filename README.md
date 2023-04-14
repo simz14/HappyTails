@@ -24,9 +24,9 @@
 <a target="_blank" href="https://mui.com/" rel="noreferrer"> <img src="https://mui.com/static/logo.png" alt="mui" width="40" height="40"/> </a>
 <a target="_blank" href="https://swiperjs.com/" rel="noreferrer"> <img src="https://cms-assets.tutsplus.com/uploads/users/780/posts/39427/image-upload/68747470733a2f2f6769746875622e7375726d6f6e2e6d652f696d616765732f636f6d6d6f6e2f7377697065722d6c6f676f2e737667.svg" alt="wsiper" width="40" height="40"/> </a>
 <a target="_blank" href="https://react-hook-form.com/" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/53986236?s=280&v=4" alt="react-hook-form" width="40" height="40"/> </a>
-<a target="_blank" href="https://sweetalert2.github.io/" rel="noreferrer"> <img src="https://raw.githubusercontent.com/sweetalert2/sweetalert2/master/assets/swal2-logo.png" alt="sweetalert2" width="40" height="40"/> </a>
+<a target="_blank" href="https://sweetalert2.github.io/" rel="noreferrer"> <img src="https://raw.githubusercontent.com/sweetalert2/sweetalert2/master/assets/swal2-logo.png" alt="sweetalert2" width="80" height="40"/> </a>
 
-- React: a JavaScript library for building user interfaces.
+- React: a JavaScript library for building web applications.
 
 - HTML: the standard markup language for creating web pages.
 
