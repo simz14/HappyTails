@@ -46,6 +46,7 @@ const DogsSection = ({
   loadMore,
   hasBottomBorder,
   hasTopPadding,
+  loaded,
 }) => {
   const { dogs, loading } = useContext(DogsContext);
   const navigate = useNavigate();
@@ -65,7 +66,7 @@ const DogsSection = ({
           <p>These are some of the dogs that are looking for home.</p>
         </div>
 
-        {loading ? (
+        {loading || !loaded ? (
           <LoadingWrap>
             <CircularProgress />
           </LoadingWrap>

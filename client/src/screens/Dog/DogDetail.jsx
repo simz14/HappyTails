@@ -11,6 +11,7 @@ import AdoptRequest from "./components/AdoptRequest";
 import DogsSection from "../../components/Dog/DogsSection";
 import PawsBcg from "../../components/PawsBcg";
 import ScrollTop from "../../components/ScrollTop";
+import { Helmet } from "react-helmet-async";
 
 const DogDetail = () => {
   const { id } = useParams();
@@ -23,6 +24,14 @@ const DogDetail = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <html lang="en" />
+        <title>Dog - HappyTails</title>
+        <meta
+          name="description"
+          content="Meet the dogs of our shelter, each with a unique personality and story to share. From playful puppies to gentle seniors, we have dogs of all ages and breeds in need of loving homes. Browse our available dogs and find your new furry companion today."
+        />
+      </Helmet>
       <ScrollTop dependecy={id} />
       <PawsBcg>
         <Container>

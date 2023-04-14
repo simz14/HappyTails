@@ -12,6 +12,7 @@ import ShelterInfo from "./components/ShelterInfo";
 import { Spacer } from "../../components/Spacer";
 import AskedQuestions from "../../components/AskedQuestions/AskedQuestions";
 import OurPartnersSection from "../../components/PartnersSection";
+import { Helmet } from "react-helmet-async";
 
 const ContactUsWrap = styled.div`
   display: grid;
@@ -65,6 +66,14 @@ const ContactUs = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <html lang="en" />
+        <title>Conatct Us - HappyTails</title>
+        <meta
+          name="description"
+          content="Have questions or want to get in touch with our dog shelter? Our team is here to help. Whether you're interested in adopting, volunteering, or donating, we're happy to assist you in any way we can. Reach out to us today and let's make a difference in the lives of dogs in need."
+        />
+      </Helmet>
       <ScrollTop />
       <PawsBcg>
         <Container>
