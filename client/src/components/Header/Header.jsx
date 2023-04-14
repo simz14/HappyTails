@@ -26,6 +26,7 @@ const HeaderWrapper = styled.div`
   & .logoImg {
     width: 4rem;
     height: 4rem;
+    cursor: pointer;
   }
   & .navLinks {
     display: flex;
@@ -89,9 +90,9 @@ const Header = () => {
     <HeaderWrapper>
       <Container>
         <nav>
-          <a href="" onClick={() => navigate("/")}>
+          <div onClick={() => navigate("/")}>
             <img className="logoImg" src={Logo} alt="logo" />
-          </a>
+          </div>
           <div className="navLinks">
             <Button title={"Home"} onClick={() => navigate("/")} />
             <Button title={"Dog list"} onClick={() => navigate("/doglist")} />
