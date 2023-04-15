@@ -12,7 +12,8 @@ import { Spacer } from "../../components/Spacer";
 import AskedQuestions from "../../components/AskedQuestions/AskedQuestions";
 import OurPartnersSection from "../../components/PartnersSection";
 import { Helmet } from "react-helmet-async";
-import useAlert from "../../hooks/alert";
+import useAlert from "../../hooks/useAlert";
+import useValidationMessage from "../../hooks/useValidationMessage";
 
 const ContactUsWrap = styled.div`
   display: grid;
@@ -44,6 +45,7 @@ const ContactUsWrap = styled.div`
 `;
 
 const ContactUs = () => {
+  const { required, valid } = useValidationMessage();
   const { success } = useAlert();
   const {
     register,
@@ -91,7 +93,7 @@ const ContactUs = () => {
                     <div className="field">
                       <TextField
                         {...register("firstName", {
-                          required: "First name is required",
+                          required: required.firstName,
                         })}
                         label="First name"
                         id="outlined-size-small"
@@ -104,7 +106,7 @@ const ContactUs = () => {
                     <div className="field">
                       <TextField
                         {...register("lastName", {
-                          required: "Last name is required",
+                          required: required.lastName,
                         })}
                         label="Last name"
                         id="outlined-size-small"
@@ -119,10 +121,10 @@ const ContactUs = () => {
                     <div className="field">
                       <TextField
                         {...register("email", {
-                          required: "Email is required",
+                          required: required.email,
                           pattern: {
                             value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-                            message: "Email is invalid",
+                            message: valid.email,
                           },
                         })}
                         label="Email"
@@ -136,7 +138,7 @@ const ContactUs = () => {
                     <div className="field">
                       <TextField
                         {...register("subject", {
-                          required: "Subject is required",
+                          required: required.subject,
                         })}
                         label="Subject"
                         id="outlined-size-small"
@@ -150,7 +152,7 @@ const ContactUs = () => {
                   <div className="lastField">
                     <TextField
                       {...register("message", {
-                        required: "Message is required",
+                        required: required.message,
                       })}
                       label="Message"
                       id="outlined-size-small"

@@ -6,6 +6,8 @@ import LightPurpleButton from "../../../components/Buttons/LightPurpleButton";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Swal from "sweetalert2";
 import PropTypes from "prop-types";
+import useValidationMessage from "../../../hooks/useValidationMessage";
+import useAlert from "../../../hooks/useAlert";
 
 const DialogWrap = styled.div`
   padding: 3rem;
@@ -44,6 +46,8 @@ const DialogWrap = styled.div`
 `;
 
 const DonationForm = ({ open, setOpen, amount }) => {
+  const { required, valid } = useValidationMessage();
+  const { success } = useAlert();
   const {
     register,
     formState: { errors },
@@ -61,11 +65,7 @@ const DonationForm = ({ open, setOpen, amount }) => {
 
   const onSubmit = () => {
     setOpen(false);
-    Swal.fire(
-      "Thank you for your donation!",
-      "You migh just save a puppy.",
-      "success"
-    );
+    success("Thank you for your donation!", "You migh just save a puppy.");
     reset();
   };
 
@@ -78,7 +78,7 @@ const DonationForm = ({ open, setOpen, amount }) => {
             <div className="field">
               <TextField
                 {...register("firstName", {
-                  required: "First name is required",
+                  required: required.firstName,
                 })}
                 label="First name"
                 id="outlined-size-small"
@@ -90,7 +90,7 @@ const DonationForm = ({ open, setOpen, amount }) => {
 
             <div className="field">
               <TextField
-                {...register("lastName", { required: "Last name is required" })}
+                {...register("lastName", { required: required.lastName })}
                 label="Last name"
                 id="outlined-size-small"
                 size="normal"
@@ -102,10 +102,10 @@ const DonationForm = ({ open, setOpen, amount }) => {
 
           <TextField
             {...register("cardNumber", {
-              required: "Card number is required",
+              required: required.cardNumber,
               pattern: {
                 value: /(?:\d[ -]*?){13,16}/,
-                message: "Card number is invalid",
+                message: valid.cardNumber,
               },
             })}
             label="Card number"
@@ -119,10 +119,10 @@ const DonationForm = ({ open, setOpen, amount }) => {
             <div className="field">
               <TextField
                 {...register("expirationDate", {
-                  required: "Expiration date is required",
+                  required: required.expirationDate,
                   pattern: {
                     value: /^(0[1-9]|1[0-2])\/[0-9]{2}$/,
-                    message: "Expiration date is invalid",
+                    message: valid.expirationDate,
                   },
                 })}
                 label="Expiration date"
@@ -136,10 +136,10 @@ const DonationForm = ({ open, setOpen, amount }) => {
             <div className="field">
               <TextField
                 {...register("cvv", {
-                  required: "CVV is required",
+                  required: required.cvv,
                   pattern: {
                     value: /^[0-9]{3,4}$/,
-                    message: "CVV is invalid",
+                    message: valid.cvv,
                   },
                 })}
                 label="CVV"

@@ -8,9 +8,9 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import PurpleButton from "../../../components/Buttons/PuprleButton";
 import PetsIcon from "@mui/icons-material/Pets";
 import dayjs from "dayjs";
-import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
-import useAlert from "../../../hooks/alert";
+import useAlert from "../../../hooks/useAlert";
+import useValidationMessage from "../../../hooks/useValidationMessage";
 
 const AdoptionWrapper = styled.div`
   display: grid;
@@ -36,6 +36,7 @@ const AdoptionWrapper = styled.div`
 `;
 
 const AdoptionForm = () => {
+  const { required, valid } = useValidationMessage();
   const { success } = useAlert();
   const {
     register,
@@ -64,7 +65,7 @@ const AdoptionForm = () => {
       <AdoptionWrapper>
         <TextField
           {...register("firstName", {
-            required: "First name is required",
+            required: required.firstName,
           })}
           label="First name"
           id="outlined-size-small"
@@ -74,7 +75,7 @@ const AdoptionForm = () => {
         />
         <TextField
           {...register("lastName", {
-            required: "Last name is required",
+            required: required.lastName,
           })}
           label="Last name"
           id="outlined-size-small"
@@ -84,7 +85,7 @@ const AdoptionForm = () => {
         />
         <TextField
           {...register("age", {
-            required: "Age is required",
+            required: required.age,
           })}
           label="Age"
           id="outlined-size-small"
@@ -95,10 +96,10 @@ const AdoptionForm = () => {
         />
         <TextField
           {...register("email", {
-            required: "Email adress is required",
+            required: required.email,
             pattern: {
               value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-              message: "Email is invalid",
+              message: valid.email,
             },
           })}
           label="Email adress"
@@ -109,7 +110,7 @@ const AdoptionForm = () => {
         />
         <TextField
           {...register("phoneNumber", {
-            required: "Phone number is required",
+            required: required.phoneNumber,
           })}
           label="Phone number"
           id="outlined-size-small"
@@ -120,7 +121,7 @@ const AdoptionForm = () => {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
             {...register("date", {
-              required: "Date of meet is required",
+              required: required.date,
             })}
             label="Date of meet"
             error={errors.date ? true : false}
@@ -129,7 +130,7 @@ const AdoptionForm = () => {
         </LocalizationProvider>
         <TextField
           {...register("reason", {
-            required: "Reason is required",
+            required: required.reason,
           })}
           className="reason"
           label="Why did you choose this dog?"
