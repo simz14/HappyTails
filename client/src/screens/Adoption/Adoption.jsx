@@ -6,10 +6,21 @@ import { DogsContext } from "../../context/DogsContext";
 import PawsBcg from "../../components/PawsBcg";
 import ScrollTop from "../../components/ScrollTop";
 import { Helmet } from "react-helmet-async";
+import { CircularProgress } from "@mui/material";
+import styled from "styled-components";
+
+const AdoptionLoadingWrap = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 400px;
+  align-items: center;
+`;
 
 const Adoption = () => {
   const { id } = useParams();
-  const { dogs } = useContext(DogsContext);
+  const { dogs, loading } = useContext(DogsContext);
   const [dog, setDog] = useState({});
 
   useEffect(() => {
@@ -28,7 +39,13 @@ const Adoption = () => {
       </Helmet>
       <ScrollTop />
       <PawsBcg>
-        <Intro dog={dog} />
+        {loading ? (
+          <AdoptionLoadingWrap>
+            <CircularProgress />
+          </AdoptionLoadingWrap>
+        ) : (
+          <Intro dog={dog} />
+        )}
       </PawsBcg>
     </Layout>
   );

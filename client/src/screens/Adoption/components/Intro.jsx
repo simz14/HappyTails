@@ -44,7 +44,7 @@ const Intro = ({ dog }) => {
 };
 
 Intro.propTypes = {
-  dog: PropTypes.object.isRequired,
+  dog: PropTypes.object,
 };
 
 export default Intro;

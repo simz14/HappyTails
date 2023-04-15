@@ -5,7 +5,6 @@ import { Container } from "../../components/Container";
 import styled from "styled-components";
 import { DialogContent, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import PurpleButton from "../../components/Buttons/PuprleButton";
 import ScrollTop from "../../components/ScrollTop";
 import ShelterInfo from "./components/ShelterInfo";
@@ -13,6 +12,7 @@ import { Spacer } from "../../components/Spacer";
 import AskedQuestions from "../../components/AskedQuestions/AskedQuestions";
 import OurPartnersSection from "../../components/PartnersSection";
 import { Helmet } from "react-helmet-async";
+import useAlert from "../../hooks/alert";
 
 const ContactUsWrap = styled.div`
   display: grid;
@@ -44,6 +44,7 @@ const ContactUsWrap = styled.div`
 `;
 
 const ContactUs = () => {
+  const { success } = useAlert();
   const {
     register,
     formState: { errors },
@@ -60,7 +61,7 @@ const ContactUs = () => {
   });
 
   const onSubmit = () => {
-    Swal.fire("Your message was sent!", "", "success");
+    success("Your message was sent!", "", "success");
     reset();
   };
 

@@ -10,6 +10,7 @@ import PetsIcon from "@mui/icons-material/Pets";
 import dayjs from "dayjs";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
+import useAlert from "../../../hooks/alert";
 
 const AdoptionWrapper = styled.div`
   display: grid;
@@ -35,6 +36,7 @@ const AdoptionWrapper = styled.div`
 `;
 
 const AdoptionForm = () => {
+  const { success } = useAlert();
   const {
     register,
     formState: { errors },
@@ -53,7 +55,7 @@ const AdoptionForm = () => {
   });
 
   const handleClickAdoption = () => {
-    Swal.fire("And it's done.", "We look forward to meeting you!", "success");
+    success("And it's done.", "We look forward to meeting you!");
     reset();
   };
 
@@ -107,7 +109,7 @@ const AdoptionForm = () => {
         />
         <TextField
           {...register("phoneNumber", {
-            required: "Phine number is required",
+            required: "Phone number is required",
           })}
           label="Phone number"
           id="outlined-size-small"
