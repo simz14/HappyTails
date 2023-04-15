@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import styled from "styled-components";
 import { useParams } from "react-router";
@@ -12,16 +12,11 @@ import DogsSection from "../../components/Dog/DogsSection";
 import PawsBcg from "../../components/PawsBcg";
 import ScrollTop from "../../components/ScrollTop";
 import { Helmet } from "react-helmet-async";
+import useDog from "../../hooks/useDog";
 
 const DogDetail = () => {
   const { id } = useParams();
-  const { dogs } = useContext(DogsContext);
-  const [dog, setDog] = useState({});
-
-  useEffect(() => {
-    setDog(dogs.find((dog) => dog.id == id));
-  }, [dogs, id]);
-
+  const { dog } = useDog();
   return (
     <Layout>
       <Helmet>
@@ -36,14 +31,14 @@ const DogDetail = () => {
       <PawsBcg>
         <Container>
           <Spacer size="s" />
-          <h1>Hi, my name is {dog?.name}!</h1>
+          <h1>Hi, my name is {dog(id)?.name}!</h1>
           <p>Here are all the facts about me you need to know.</p>
           <Spacer size="s" />
-          <DogInfo dog={dog} />
+          <DogInfo dog={dog(id)} />
         </Container>
       </PawsBcg>
       <Container>
-        <KnowBetter dog={dog} />
+        <KnowBetter dog={dog(id)} />
       </Container>
       <AdoptRequest id={id} />
       <Spacer size="s" />

@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Container } from "../Container";
 import styled from "styled-components";
 import Dog from "./Dog";
-import { DogsContext } from "../../context/DogsContext";
 import PurpleButton from "../Buttons/PuprleButton";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { Spacer } from "../Spacer";
 import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
 import { CircularProgress } from "@mui/material";
+import useDogs from "../../hooks/useDogs";
 
 const DogsContainer = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ const DogsSection = ({
   hasTopPadding,
   loaded,
 }) => {
-  const { dogs, loading } = useContext(DogsContext);
+  const { dogs, loading } = useDogs();
   const navigate = useNavigate();
   const [dogsToShow, setDogsToShow] = useState(amount);
 

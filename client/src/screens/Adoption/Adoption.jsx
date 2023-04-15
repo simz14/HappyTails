@@ -1,13 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import Layout from "../../components/Layout";
 import { useParams } from "react-router";
 import Intro from "./components/Intro";
-import { DogsContext } from "../../context/DogsContext";
 import PawsBcg from "../../components/PawsBcg";
 import ScrollTop from "../../components/ScrollTop";
 import { Helmet } from "react-helmet-async";
 import { CircularProgress } from "@mui/material";
 import styled from "styled-components";
+import useDogs from "../../hooks/useDogs";
+import useDog from "../../hooks/useDog";
 
 const AdoptionLoadingWrap = styled.div`
   display: flex;
@@ -20,12 +21,8 @@ const AdoptionLoadingWrap = styled.div`
 
 const Adoption = () => {
   const { id } = useParams();
-  const { dogs, loading } = useContext(DogsContext);
-  const [dog, setDog] = useState({});
-
-  useEffect(() => {
-    setDog(dogs?.find((dog) => dog.id == id));
-  }, [dogs]);
+  const { loading } = useDogs();
+  const { dog } = useDog();
 
   return (
     <Layout>
@@ -44,7 +41,7 @@ const Adoption = () => {
             <CircularProgress />
           </AdoptionLoadingWrap>
         ) : (
-          <Intro dog={dog} />
+          <Intro dog={dog(id)} />
         )}
       </PawsBcg>
     </Layout>
