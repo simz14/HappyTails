@@ -85,7 +85,7 @@ const LearnMore = styled.div`
 const LearnMoreSection = () => {
   return (
     <Container>
-      <SlideUp viewOffset={150}>
+      <SlideUp viewOffset={300}>
         <LearnMore>
           <img className="beagle " src={beagleAlone} alt="beagle" />
           <div className="purple">

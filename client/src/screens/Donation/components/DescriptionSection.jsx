@@ -31,7 +31,7 @@ const DescriptionSection = () => {
     <DescriptionWrap>
       <Container>
         <Spacer size="s" />
-        <SlideUp>
+        <SlideUp viewOffset={100}>
           <h2>Let’s donate to save more dogs</h2>
         </SlideUp>
 
