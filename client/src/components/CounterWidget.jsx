@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import useCount from "../hooks/useCount";
+import SlideUp from "../components/SlideUp";
 
 const CounterWrapper = styled.div`
   background-color: white;
@@ -31,21 +33,31 @@ const CounterWrapper = styled.div`
 `;
 
 const CounterWidget = () => {
+  const [dogAmount, fireGogAmount] = useCount(10);
+  const [shelters, fireShelters] = useCount(5);
+  const [years, fireYears] = useCount(18);
   return (
-    <CounterWrapper>
-      <div className="count">
-        <h2>10k+</h2>
-        <span>Dogs Adopted</span>
-      </div>
-      <div className="count">
-        <h2>5k+</h2>
-        <span>Shelters & Rescues</span>
-      </div>
-      <div className="count">
-        <h2>18+</h2>
-        <span>Years of Impact</span>
-      </div>
-    </CounterWrapper>
+    <SlideUp
+      viewOffset={50}
+      afterReveal={() => {
+        fireGogAmount(true), fireShelters(true), fireYears(true);
+      }}
+    >
+      <CounterWrapper>
+        <div className="count">
+          <h2>{dogAmount}k+</h2>
+          <span>Dogs Adopted</span>
+        </div>
+        <div className="count">
+          <h2>{shelters}k+</h2>
+          <span>Shelters & Rescues</span>
+        </div>
+        <div className="count">
+          <h2>{years}+</h2>
+          <span>Years of Impact</span>
+        </div>
+      </CounterWrapper>
+    </SlideUp>
   );
 };
 

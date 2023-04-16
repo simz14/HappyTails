@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import ScrollReveal from "scrollreveal";
 import PropTypes from "prop-types";
 
-const SlideUp = ({ children, viewOffset }) => {
+const SlideUp = ({ children, viewOffset, afterReveal }) => {
   const ref = useRef();
   const slideUp = {
     distance: "200px",
@@ -12,11 +12,12 @@ const SlideUp = ({ children, viewOffset }) => {
     viewOffset: {
       bottom: viewOffset,
     },
+    afterReveal: afterReveal,
   };
 
   useEffect(() => {
     ScrollReveal().reveal(ref.current, slideUp);
-  }, []);
+  }, [ScrollReveal]);
 
   return <div ref={ref}>{children}</div>;
 };

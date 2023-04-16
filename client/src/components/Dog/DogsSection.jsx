@@ -15,6 +15,7 @@ const DogsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 1000px;
 
   border-bottom: ${(props) =>
     props.className === "border" &&
