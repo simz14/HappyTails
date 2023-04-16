@@ -13,10 +13,19 @@ import PawsBcg from "../../components/PawsBcg";
 import ScrollTop from "../../components/ScrollTop";
 import { Helmet } from "react-helmet-async";
 import useDog from "../../hooks/useDog";
+import { CircularProgress } from "@mui/material";
+
+const LoadingWrap = styled.div`
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const DogDetail = () => {
   const { id } = useParams();
-  const { dog } = useDog();
+  const { dog, loading } = useDog(id);
   return (
     <Layout>
       <Helmet>
@@ -28,26 +37,34 @@ const DogDetail = () => {
         />
       </Helmet>
       <ScrollTop dependecy={id} />
-      <PawsBcg>
-        <Container>
+      {loading ? (
+        <LoadingWrap>
+          <CircularProgress />
+        </LoadingWrap>
+      ) : (
+        <>
+          <PawsBcg>
+            <Container>
+              <Spacer size="s" />
+              <h1>Hi, my name is {dog?.name}!</h1>
+              <p>Here are all the facts about me you need to know.</p>
+              <Spacer size="s" />
+              <DogInfo dog={dog} />
+            </Container>
+          </PawsBcg>
+          <Container>
+            <KnowBetter dog={dog} />
+          </Container>
+          <AdoptRequest id={id} />
           <Spacer size="s" />
-          <h1>Hi, my name is {dog(id)?.name}!</h1>
-          <p>Here are all the facts about me you need to know.</p>
-          <Spacer size="s" />
-          <DogInfo dog={dog(id)} />
-        </Container>
-      </PawsBcg>
-      <Container>
-        <KnowBetter dog={dog(id)} />
-      </Container>
-      <AdoptRequest id={id} />
-      <Spacer size="s" />
-      <DogsSection
-        loaded={true}
-        navigateTo={true}
-        hasBottomBorder={true}
-        amount={3}
-      />
+          <DogsSection
+            loaded={true}
+            navigateTo={true}
+            hasBottomBorder={true}
+            amount={3}
+          />
+        </>
+      )}
     </Layout>
   );
 };

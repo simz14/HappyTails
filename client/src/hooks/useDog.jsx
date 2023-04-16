@@ -1,12 +1,16 @@
+import { useEffect } from "react";
 import useDogs from "./useDogs";
+import { useState } from "react";
 
-const useDog = () => {
-  const { dogs } = useDogs();
+const useDog = (id) => {
+  const { dogs, loading } = useDogs();
+  const [dog, setDog] = useState({});
 
-  const dog = (id) => {
-    return dogs.find((dog) => dog.id == id);
-  };
-  return { dog };
+  useEffect(() => {
+    setDog(dogs.find((dog) => dog.id == id));
+  }, [dogs]);
+
+  return { dog, loading };
 };
 
 export default useDog;

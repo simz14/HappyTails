@@ -22,7 +22,7 @@ const AdoptionLoadingWrap = styled.div`
 const Adoption = () => {
   const { id } = useParams();
   const { loading } = useDogs();
-  const { dog } = useDog();
+  const { dog } = useDog(id);
 
   return (
     <Layout>
@@ -41,7 +41,7 @@ const Adoption = () => {
             <CircularProgress />
           </AdoptionLoadingWrap>
         ) : (
-          <Intro dog={dog(id)} />
+          <Intro dog={dog} />
         )}
       </PawsBcg>
     </Layout>
