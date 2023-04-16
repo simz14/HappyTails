@@ -9,6 +9,7 @@ import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
 import { CircularProgress } from "@mui/material";
 import useDogs from "../../hooks/useDogs";
+import SlideUp from "../SlideUp";
 
 const DogsContainer = styled.div`
   display: flex;
@@ -59,37 +60,39 @@ const DogsSection = ({
 
   return (
     <Container>
-      <DogsContainer className={hasBottomBorder && "border"}>
-        {hasTopPadding && <Spacer size="s" />}
-        <div className="sectionDescription">
-          <h2>Dogs available for adoption</h2>
-          <p>These are some of the dogs that are looking for home.</p>
-        </div>
+      <SlideUp viewOffset={100}>
+        <DogsContainer className={hasBottomBorder && "border"}>
+          {hasTopPadding && <Spacer size="s" />}
+          <div className="sectionDescription">
+            <h2>Dogs available for adoption</h2>
+            <p>These are some of the dogs that are looking for home.</p>
+          </div>
 
-        {loading || !loaded ? (
-          <LoadingWrap>
-            <CircularProgress />
-          </LoadingWrap>
-        ) : (
-          <>
-            <DogsWrapper>
-              {dogs.slice(0, dogsToShow).map((dog) => {
-                return <Dog key={dog.id} dog={dog} />;
-              })}
-            </DogsWrapper>
-            {dogsToShow === dogs.length || dogsToShow > dogs.length ? null : (
-              <PurpleButton
-                onClick={handleClick}
-                icon={<FaArrowCircleRight />}
-                iconAfter={true}
-                title={"View more"}
-              />
-            )}
-          </>
-        )}
+          {loading || !loaded ? (
+            <LoadingWrap>
+              <CircularProgress />
+            </LoadingWrap>
+          ) : (
+            <>
+              <DogsWrapper>
+                {dogs.slice(0, dogsToShow).map((dog) => {
+                  return <Dog key={dog.id} dog={dog} />;
+                })}
+              </DogsWrapper>
+              {dogsToShow === dogs.length || dogsToShow > dogs.length ? null : (
+                <PurpleButton
+                  onClick={handleClick}
+                  icon={<FaArrowCircleRight />}
+                  iconAfter={true}
+                  title={"View more"}
+                />
+              )}
+            </>
+          )}
 
-        <Spacer size="s" />
-      </DogsContainer>
+          <Spacer size="s" />
+        </DogsContainer>
+      </SlideUp>
     </Container>
   );
 };

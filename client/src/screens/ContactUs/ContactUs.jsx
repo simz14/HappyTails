@@ -14,6 +14,7 @@ import OurPartnersSection from "../../components/PartnersSection";
 import { Helmet } from "react-helmet-async";
 import useAlert from "../../hooks/useAlert";
 import useValidationMessage from "../../hooks/useValidationMessage";
+import SlideUp from "../../components/SlideUp";
 
 const ContactUsWrap = styled.div`
   display: grid;
@@ -82,11 +83,14 @@ const ContactUs = () => {
         <Container>
           <ContactUsWrap>
             <div>
-              <h1>Contact Us</h1>
-              <p>
-                Do not hesitate to contact us with any question you have. We are
-                always here for you.
-              </p>
+              <SlideUp>
+                <h1>Contact Us</h1>
+                <p>
+                  Do not hesitate to contact us with any question you have. We
+                  are always here for you.
+                </p>
+              </SlideUp>
+
               <div className="form">
                 <DialogContent>
                   <div className="fieldsWrap">

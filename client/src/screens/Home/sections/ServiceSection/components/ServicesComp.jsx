@@ -6,6 +6,7 @@ import qualityIcon from "../../../../../assets/quality-icon.png";
 import CounterWidget from "../../../../../components/CounterWidget";
 import happyDogsVideo from "../../../../../assets/happyDogsVideo.mp4";
 import { Spacer } from "../../../../../components/Spacer";
+import SlideUp from "../../../../../components/SlideUp";
 
 const ServicesSectionContainer = styled.div`
   display: flex;
@@ -68,7 +69,6 @@ const VideoWrapper = styled.div`
 const ServicesComp = () => {
   return (
     <>
-      {" "}
       <Spacer size="s" />
       <ServicesSectionContainer>
         <img className="threeDogs" src={threeDogs} alt="dogs" />
@@ -76,6 +76,7 @@ const ServicesComp = () => {
           <h2>Best service to breeds your loved dogs</h2>
           <div className="reason first">
             <img className="icon" src={groupIcon} alt="group" />
+
             <div>
               <h3>Professional Breeder</h3>
               <p>We provide consultations from dog breeders.</p>
@@ -87,7 +88,7 @@ const ServicesComp = () => {
               <h3>Highest Quality</h3>
               <p>We provide the highest quality service.</p>
             </div>
-          </div>{" "}
+          </div>
           <Spacer size="s" />
         </ReasonsWrapper>
       </ServicesSectionContainer>

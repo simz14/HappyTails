@@ -4,6 +4,8 @@ import { Container } from "../../../components/Container";
 import { Spacer } from "../../../components/Spacer";
 import donation3 from "../../../assets/donation/donation3.jpg";
 import CounterWidget from "../../../components/CounterWidget";
+import SlideUp from "../../../components/SlideUp";
+import { Slide } from "@mui/material";
 
 const DescriptionWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.lightPurple};
@@ -29,7 +31,10 @@ const DescriptionSection = () => {
     <DescriptionWrap>
       <Container>
         <Spacer size="s" />
-        <h2>Let’s donate to save more dogs</h2>
+        <SlideUp>
+          <h2>Let’s donate to save more dogs</h2>
+        </SlideUp>
+
         <p>
           Donating to a dog shelter can help provide essential resources and
           care to dogs in need. Your donation can support the shelter's efforts

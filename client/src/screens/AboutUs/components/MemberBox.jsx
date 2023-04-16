@@ -21,7 +21,7 @@ const MemberBox = ({ image, name, position }) => {
     <Wrapper>
       <img src={image} alt="person" />
       <h4>{name}</h4>
-      <p>{position}s</p>
+      <p>{position}</p>
     </Wrapper>
   );
 };

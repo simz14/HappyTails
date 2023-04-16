@@ -5,6 +5,9 @@ import happyWomenImg from "../../../assets/womenHappyDog.png";
 import OptionsSection from "./OptionsSections";
 import { Spacer } from "../../../components/Spacer";
 import { useNavigate } from "react-router";
+import ScrollReveal from "scrollreveal";
+import { useEffect } from "react";
+import SlideUp from "../../../components/SlideUp";
 
 const BcgImage = styled.div`
   height: 100%;
@@ -36,6 +39,7 @@ const IntroWrapper = styled.div`
   & .introText {
     max-width: 2000px;
     padding: 0 15%;
+    z-index: 99;
     & .quote {
       font-family: ${(props) => props.theme.typography.family.basic};
       font-size: ${(props) => props.theme.typography.size.xLarge};
@@ -78,25 +82,28 @@ const IntroWrapper = styled.div`
 
 const IntroSection = () => {
   const navigate = useNavigate();
+
   return (
     <HomeWrapper>
       <IntroWrapper>
         <div className="introText">
           <Spacer size="s" />
-          <div className="content">
-            <h1>Adoption is a loving option</h1>
-            <p className="quote">
-              Adopting a dog is a journey of growth, love, and patience. It's
-              not always easy, but the reward of a loyal companion who will
-              always be there for you is priceless.
-            </p>
-            <PurpleButton
-              icon={<FaArrowCircleRight />}
-              iconAfter={true}
-              title={"Contact Us"}
-              onClick={() => navigate("/contactus")}
-            />
-          </div>
+          <SlideUp>
+            <div className="content">
+              <h1>Adoption is a loving option</h1>
+              <p className="quote">
+                Adopting a dog is a journey of growth, love, and patience. It's
+                not always easy, but the reward of a loyal companion who will
+                always be there for you is priceless.
+              </p>
+              <PurpleButton
+                icon={<FaArrowCircleRight />}
+                iconAfter={true}
+                title={"Contact Us"}
+                onClick={() => navigate("/contactus")}
+              />
+            </div>
+          </SlideUp>
         </div>
         <BcgImage></BcgImage>
       </IntroWrapper>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Spacer } from "../../../components/Spacer";
 import Condition from "../../../components/Condition";
 import PropTypes from "prop-types";
+import SlideUp from "../../../components/SlideUp";
 
 const KnowContainer = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightBlue};
@@ -47,7 +48,9 @@ const KnowBetter = ({ dog }) => {
             <p>{dog?.story}</p>
           </div>
           <div>
-            <img src={dog && dog.imgs && dog.imgs[0]} alt="dog" />
+            <SlideUp viewOffset={100}>
+              <img src={dog && dog.imgs && dog.imgs[0]} alt="dog" />
+            </SlideUp>
           </div>
         </KnowWrap>
         <Spacer size="s" />

@@ -6,6 +6,7 @@ import shibainuAlone from "../../../assets/shibainu/shibainuAlone.png";
 import styled from "styled-components";
 import { Spacer } from "../../../components/Spacer";
 import DonateSection from "./DonateSection";
+import SlideUp from "../../../components/SlideUp";
 
 const IntroWrap = styled.div`
   display: flex;
@@ -41,23 +42,25 @@ const IntroSection = () => {
   return (
     <PawsBcg>
       <Container>
-        <IntroWrap>
-          <div className="imgWrap remove">
-            <img src={chihuahuaAlone} alt="chihuahua" />
-          </div>
+        <SlideUp>
+          <IntroWrap>
+            <div className="imgWrap remove">
+              <img src={chihuahuaAlone} alt="chihuahua" />
+            </div>
 
-          <div className="textWrap">
-            <h2>Make a donation</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis.
-            </p>
-          </div>
-          <div className="imgWrap">
-            <img src={shibainuAlone} alt="shibainu" />
-          </div>
-        </IntroWrap>
-        <Spacer size="s" />
+            <div className="textWrap">
+              <h2>Make a donation</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                tellus, luctus nec ullamcorper mattis.
+              </p>
+            </div>
+            <div className="imgWrap">
+              <img src={shibainuAlone} alt="shibainu" />
+            </div>
+          </IntroWrap>
+          <Spacer size="s" />
+        </SlideUp>
         <DonateSection />
       </Container>
     </PawsBcg>

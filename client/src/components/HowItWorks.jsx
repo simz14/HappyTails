@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container } from "./Container";
 import shapeMask from "../assets/shape.png";
 import { Spacer } from "./Spacer";
+import SlideUp from "./SlideUp";
 
 const HowItWorksBcg = styled.div`
   background-color: ${({ theme }) => theme.colors.lightBcgBlue};
@@ -13,6 +14,11 @@ const HowItWorksWrap = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   & .stepsWrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -57,8 +63,13 @@ const HowItWorksSection = () => {
       <Container>
         <HowItWorksWrap>
           <Spacer size="s" />
-          <h2>How it works?</h2>
-          <p>Look at how the adoption process looks like.</p>
+          <SlideUp>
+            <div className="intro">
+              <h2>How it works?</h2>
+              <p>Look at how the adoption process looks like.</p>
+            </div>
+          </SlideUp>
+
           <div className="stepsWrap">
             <div>
               <StepNum>

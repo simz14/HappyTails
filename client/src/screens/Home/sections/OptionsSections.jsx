@@ -5,6 +5,7 @@ import adoptDog from "../../../assets/adoptDog.png";
 import rehomeDog from "../../../assets/rehomeDog.png";
 import donation from "../../../assets/donation.png";
 import { useNavigate } from "react-router";
+import SlideUp from "../../../components/SlideUp";
 
 const OptionsWrapper = styled.div`
   position: relative;
@@ -42,40 +43,42 @@ const OptionsSection = () => {
   const navigate = useNavigate();
   return (
     <Container>
-      <OptionsWrapper>
-        <Option
-          onClick={() => {
-            navigate("/doglist");
-          }}
-        >
-          <img src={adoptDog} alt="adopt" />
-          <h3>Want to adopt a dog?</h3>
-          <span>
-            Here you will find the most adorable dog to give a wonderful new
-            home.
-          </span>
-        </Option>
-        <Option
-          onClick={() => {
-            navigate("/doglist");
-          }}
-        >
-          <img src={rehomeDog} alt="rehome" />
-          <h3>Need to rehome a dog?</h3>
-          <span>We can help with finding the best home for you dog.</span>
-        </Option>
-        <Option
-          onClick={() => {
-            navigate("/donation");
-          }}
-        >
-          <img src={donation} alt="donation" />
-          <h3>Make a donation.</h3>
-          <span>
-            Help us save our four-legged friends all around the world.
-          </span>
-        </Option>
-      </OptionsWrapper>
+      <SlideUp viewOffset={50}>
+        <OptionsWrapper>
+          <Option
+            onClick={() => {
+              navigate("/doglist");
+            }}
+          >
+            <img src={adoptDog} alt="adopt" />
+            <h3>Want to adopt a dog?</h3>
+            <span>
+              Here you will find the most adorable dog to give a wonderful new
+              home.
+            </span>
+          </Option>
+          <Option
+            onClick={() => {
+              navigate("/doglist");
+            }}
+          >
+            <img src={rehomeDog} alt="rehome" />
+            <h3>Need to rehome a dog?</h3>
+            <span>We can help with finding the best home for you dog.</span>
+          </Option>
+          <Option
+            onClick={() => {
+              navigate("/donation");
+            }}
+          >
+            <img src={donation} alt="donation" />
+            <h3>Make a donation.</h3>
+            <span>
+              Help us save our four-legged friends all around the world.
+            </span>
+          </Option>
+        </OptionsWrapper>
+      </SlideUp>
     </Container>
   );
 };

@@ -14,6 +14,7 @@ import ScrollTop from "../../components/ScrollTop";
 import { Helmet } from "react-helmet-async";
 import useDog from "../../hooks/useDog";
 import { CircularProgress } from "@mui/material";
+import SlideUp from "../../components/SlideUp";
 
 const LoadingWrap = styled.div`
   width: 100%;
@@ -46,8 +47,11 @@ const DogDetail = () => {
           <PawsBcg>
             <Container>
               <Spacer size="s" />
-              <h1>Hi, my name is {dog?.name}!</h1>
-              <p>Here are all the facts about me you need to know.</p>
+              <SlideUp>
+                <h1>Hi, my name is {dog?.name}!</h1>
+                <p>Here are all the facts about me you need to know.</p>
+              </SlideUp>
+
               <Spacer size="s" />
               <DogInfo dog={dog} />
             </Container>

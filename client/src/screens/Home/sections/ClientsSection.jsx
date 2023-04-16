@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import whiteDogWomen from "../../../assets/whiteDogWomen.jpg";
 import { Container } from "../../../components/Container";
 import { FaUserAlt } from "react-icons/fa";
 import { Spacer } from "../../../components/Spacer";
+import SlideUp from "../../../components/SlideUp";
 
 const ClintesWrapp = styled.div`
   background-color: ${(props) => props.theme.colors.lightBcgPink};
@@ -20,11 +21,12 @@ const Intro = styled.div`
     height: 450px;
     object-fit: cover;
     border-radius: ${(props) => props.theme.spacing.padding.large};
+    opacity: 5;
   }
 
   & .quote {
     position: absolute;
-    bottom: 0;
+    bottom: 12%;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
@@ -38,7 +40,7 @@ const Intro = styled.div`
   @media (max-width: 750px) {
     grid-template-columns: 1fr;
     & .quote {
-      min-width: 80%;
+      min-width: 20rem;
       padding: 1.5rem;
     }
   }
@@ -83,9 +85,12 @@ const ClientsSection = () => {
               feedback and stories.
             </p>
           </div>
-          <div>
-            <img className="dogImage" src={whiteDogWomen} alt="dog" />
-          </div>
+          <SlideUp viewOffset={500}>
+            <div>
+              <img className="dogImage" src={whiteDogWomen} alt="dog" />
+            </div>
+          </SlideUp>
+
           <div className="quote">
             <p>
               “The first day we bought Miso home, he did’nt cry at all on the

@@ -7,6 +7,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 import { Spacer } from "../../../components/Spacer";
 import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
+import SlideUp from "../../../components/SlideUp";
 
 const RequestContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.lightPurple};
@@ -44,22 +45,25 @@ const AdoptRequest = ({ id }) => {
     <RequestContainer>
       <Container>
         <Spacer size="s" />
-        <RequestWrap>
-          <img src={dogAdopt} alt="dog" />
-          <div className="text">
-            <h2>Request an adoption online</h2>
-            <p>
-              If there is a dog you fell in love with, don't hesitate to contact
-              us or apply for adoption.
-            </p>
-            <PurpleButton
-              icon={<ArticleIcon />}
-              iconBefore={true}
-              title="Apply to adoption"
-              onClick={() => navigate(`/adoption/${id}`)}
-            />
-          </div>
-        </RequestWrap>
+        <SlideUp viewOffset={50}>
+          <RequestWrap>
+            <img src={dogAdopt} alt="dog" />
+            <div className="text">
+              <h2>Request an adoption online</h2>
+              <p>
+                If there is a dog you fell in love with, don't hesitate to
+                contact us or apply for adoption.
+              </p>
+              <PurpleButton
+                icon={<ArticleIcon />}
+                iconBefore={true}
+                title="Apply to adoption"
+                onClick={() => navigate(`/adoption/${id}`)}
+              />
+            </div>
+          </RequestWrap>
+        </SlideUp>
+
         <Spacer size="s" />
       </Container>
     </RequestContainer>

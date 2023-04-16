@@ -6,6 +6,7 @@ import adoptionWhite from "../../../assets/adoptionWhite.png";
 import beagleAlone from "../../../assets/beagleAlone.png";
 import { Container } from "../../../components/Container";
 import LearnMoreArrow from "../../../components/LearnMoreArrow";
+import SlideUp from "../../../components/SlideUp";
 
 const LearnMore = styled.div`
   position: relative;
@@ -84,25 +85,27 @@ const LearnMore = styled.div`
 const LearnMoreSection = () => {
   return (
     <Container>
-      <LearnMore>
-        <img className="beagle " src={beagleAlone} alt="beagle" />
-        <div className="purple">
-          <img src={adoptionWhite} alt="adopt" />
-          <div>
-            <h2>Adopt a dog</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <LearnMoreArrow navigateTo="/doglist" color={"white"} />
+      <SlideUp viewOffset={150}>
+        <LearnMore>
+          <img className="beagle " src={beagleAlone} alt="beagle" />
+          <div className="purple">
+            <img src={adoptionWhite} alt="adopt" />
+            <div>
+              <h2>Adopt a dog</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <LearnMoreArrow navigateTo="/doglist" color={"white"} />
+            </div>
           </div>
-        </div>
-        <div className="yellow">
-          <img src={rehomePurple} alt="rehome" />
-          <div>
-            <h2>Rehome a dog</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <LearnMoreArrow navigateTo="/doglist" color={"#322258"} />
+          <div className="yellow">
+            <img src={rehomePurple} alt="rehome" />
+            <div>
+              <h2>Rehome a dog</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <LearnMoreArrow navigateTo="/doglist" color={"#322258"} />
+            </div>
           </div>
-        </div>
-      </LearnMore>
+        </LearnMore>
+      </SlideUp>
     </Container>
   );
 };

@@ -4,6 +4,7 @@ import { Spacer } from "../../../components/Spacer";
 import { Container } from "../../../components/Container";
 import AdoptionForm from "./AdoptionForm";
 import PropTypes from "prop-types";
+import SlideUp from "../../../components/SlideUp";
 
 const IntroWrapper = styled.div`
   display: grid;
@@ -25,11 +26,13 @@ const Intro = ({ dog }) => {
     <Container>
       <Spacer size="xs" />
       <div>
-        <h2>{dog?.name} is already excited for a new home</h2>
-        <p>
-          The next step you need to take for successful adoption is to fill out
-          the form and choose date to meet Velfire.
-        </p>
+        <SlideUp>
+          <h2>{dog?.name} is already excited for a new home</h2>
+          <p>
+            The next step you need to take for successful adoption is to fill
+            out the form and choose date to meet Velfire.
+          </p>
+        </SlideUp>
       </div>
       <Spacer size="xs" />
       <IntroWrapper>
