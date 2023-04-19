@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import ScrollReveal from "scrollreveal";
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
 
 const SlideUp = ({ children, viewOffset, afterReveal }) => {
   const ref = useRef();
@@ -27,6 +27,7 @@ SlideUp.propTypes = {
 };
 SlideUp.defaultProps = {
   viewOffset: 400,
+  afterReveal: () => {},
 };
 
 export default SlideUp;

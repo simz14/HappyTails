@@ -33,14 +33,14 @@ const CounterWrapper = styled.div`
 `;
 
 const CounterWidget = () => {
-  const [dogAmount, fireGogAmount] = useCount(10);
+  const [dogAmount, fireDogAmount] = useCount(10);
   const [shelters, fireShelters] = useCount(5);
   const [years, fireYears] = useCount(18);
   return (
     <SlideUp
       viewOffset={50}
       afterReveal={() => {
-        fireGogAmount(true), fireShelters(true), fireYears(true);
+        fireDogAmount(true), fireShelters(true), fireYears(true);
       }}
     >
       <CounterWrapper>

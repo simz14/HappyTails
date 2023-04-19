@@ -1,5 +1,4 @@
 import React from "react";
-import { FaArrowCircleRight } from "react-icons/fa";
 import styled from "styled-components";
 import rehomePurple from "../../../assets/rehomePurple.png";
 import adoptionWhite from "../../../assets/adoptionWhite.png";

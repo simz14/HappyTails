@@ -5,8 +5,6 @@ import happyWomenImg from "../../../assets/womenHappyDog.png";
 import OptionsSection from "./OptionsSections";
 import { Spacer } from "../../../components/Spacer";
 import { useNavigate } from "react-router";
-import ScrollReveal from "scrollreveal";
-import { useEffect } from "react";
 import SlideUp from "../../../components/SlideUp";
 
 const BcgImage = styled.div`
